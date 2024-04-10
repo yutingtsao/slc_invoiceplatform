@@ -1,0 +1,261 @@
+@import url(./reset.css);
+
+body{
+    font-family: "Noto Sans", sans-serif;
+    /* width: 100%; */
+    height: 1024px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:flex-start ;
+    overflow: hidden;
+
+}
+
+*{
+    color: #745E48;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* HEADER */
+
+header{
+    align-self: self-end;
+    display: flex;
+    width: 1617px;
+    height: 68px;
+    align-items: center;
+    gap: 877px;
+    position: fixed;
+    overflow: hidden;
+    padding: 0 32px 0 32px;
+    box-sizing: border-box;
+    background-color: #EFE2CB;
+    box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
+    z-index: 1;
+}
+
+
+header path:hover{
+    color:#E94C26 ;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.40);
+}
+
+.header_icon, .toggle_icon{
+    width: 32px;
+    height:32px;
+}
+
+.toggle_icon{
+    display: none;
+}
+
+
+
+/* Hide&Show ICON and Search */
+
+.left_side {
+    display: flex;
+    flex-direction: row;
+    width: 375px;
+    height: 40px;
+    line-height: 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.search_block{
+    display: flex;
+    width: 303px;
+    height: 40px;
+    background-color: #FFFCF5;
+    border: 1px solid #E0E0E0;
+    padding: 4px 261px 4px 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    line-height: 40px;
+}
+
+.search_block:hover{
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.40);
+    border: 1px solid #745E48;
+}
+
+/* user&log_out */
+
+.right_side{
+    width: 309px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+    
+}
+
+.user p{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: #745E48;
+}
+
+
+.user img{
+    display: block;
+}
+
+/* Sidebar */
+aside{
+    display: flex;
+    width: 303px;
+    height: 1024px;
+    flex-direction: column;
+    background-color: #EFE2CB;
+    box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
+    text-align: center;
+    overflow: hidden;
+    position: fixed;
+    transition: left 0.3s ease;
+    
+}
+
+aside a{
+    /* margin-bottom: 24px; */
+    text-decoration: none;
+}
+
+
+/* title_section */
+aside>ul{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    margin-top: 24px;
+    padding-left: 40px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.home, .matching_setting{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;  
+    width: 100%;
+    height: 50px;
+}
+
+.invoice_setting, .serial_setting{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    
+}
+
+.home a, .invoice_setting a, .matching_setting a, .serial_setting a{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;  
+    width: 100%;
+    height: 50px;
+}
+
+
+/* Title */
+aside span{
+    margin-left: 12px;
+    font-size: 16px;
+    color: #745E48;
+    font-weight: bold;
+}
+
+
+/* aside_icon */
+.aside_icon{
+    width: 32px;
+    height:32px;
+    
+}
+
+.drop_icon{
+    width: 24px;
+    height: 24px;
+    margin-left: 100px;
+}
+
+.dash_icon{
+    margin-right: 12px;
+}
+
+/* invice_setting&dropdown */
+.dropdown_block1{
+    /* margin: 14px 0; */
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+
+.fueling-class{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 14px 0;
+}
+
+.fueling-class a{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 14px 0;
+}
+
+/* serial_setting */
+
+.dropdown_block2{
+    /* margin: 14px 0; */
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+
+.serial-class{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 14px 0;
+}
+
+.serial-class a{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 14px 0;
+}
+
