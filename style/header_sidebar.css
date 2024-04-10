@@ -42,14 +42,24 @@ header{
 }
 
 
+
+
 header path:hover{
     color:#E94C26 ;
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.40);
 }
 
+svg{
+    width: 32px;
+    height:32px; 
+}
+
+
+
 .toggle_icon, .search_icon, .noti_icon , .login_icon{
     width: 32px;
     height:32px;
+    /* font-size: 32px; */
 }
 
 .toggle_icon{
@@ -85,7 +95,7 @@ header path:hover{
 }
 
 .search_block:hover{
-    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.40);
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.20);
     border: 1px solid #745E48;
 }
 

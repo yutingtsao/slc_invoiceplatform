@@ -16,7 +16,7 @@ $(document).ready(function(){
 })
 
 $(document).ready(function(){
-    $('.fa-solid fa-xmark').click(function(){
+    $('.noti_icon').click(function(){
         $('.notification').animate({right:"0px"})
         $('.mask_noti').css('display','block')
         $('.mask_noti').animate({right:"-433px"})
@@ -26,7 +26,7 @@ $(document).ready(function(){
     //     $('.notification').animate({right:"-433px"})
     // })
 
-    $('.noto_xmark').click(function(){
+    $('#noti_xmark').click(function(){
         $('.mask_noti').css('display','none')
         window.history.back()
     })
