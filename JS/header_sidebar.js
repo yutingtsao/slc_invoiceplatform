@@ -13,10 +13,8 @@ $(document).ready(function(){
     // })
 
     // console(toggle_icon)
-})
 
-$(document).ready(function(){
-    $('.noti_icon').click(function(){
+    $('#noti').click(function(){
         $('.notification').animate({right:"0px"})
         $('.mask_noti').css('display','block')
         $('.mask_noti').animate({right:"-433px"})
@@ -26,7 +24,7 @@ $(document).ready(function(){
     //     $('.notification').animate({right:"-433px"})
     // })
 
-    $('#noti_xmark').click(function(){
+    $('#xmark').click(function(){
         $('.mask_noti').css('display','none')
         window.history.back()
     })
@@ -38,7 +36,12 @@ $(document).ready(function(){
     $('.notification').click(function(e){
         e.stopPropagation()
     })
-
     
+    $('.noti_delete').click(function(){
+        $('noti_message').empty();
+    })
+
 })
+
+
 

@@ -19,17 +19,18 @@
         <div class="left_side">
             <i class="fa-solid fa-angles-left toggle_icon"></i>
             <div class="search_block">
-                <i class="fa-solid fa-magnifying-glass search_icon" ></i>
+                <i id="search"><i class="fa-solid fa-magnifying-glass search_icon" ></i></i>
             </div>
         </div>
 
         <div class="right_side">
-            <i class="noti_icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg></i>
+            <i id="noti"><i class="fa-solid fa-bell noti_icon"></i></i>
+        
                 <div class="user">
                     <p>Hi Tiffany</p>
                     <img src="./Pic/user pic.svg" alt="">
                 </div>
-            <i class="fa-solid fa-right-to-bracket login_icon"></i>
+            <i id="login"><i class="fa-solid fa-right-to-bracket login_icon"></i></i>
         </div>
     </header>
  
@@ -39,13 +40,13 @@
         <ul>
             <li class="home">
                 <a href="#">
-                    <i class="fa-solid fa-house-chimney aside_icon"></i>
+                    <i id="home"><i class="fa-solid fa-house-chimney aside_icon"></i></i>
                     <span>首頁</span>
                 </a>
             </li>
             <li class="invoice_setting">
                 <a href="#">
-                    <i class="fa-solid fa-file-invoice-dollar aside_icon"></i>
+                    <i id="invoice_setting"><i class="fa-solid fa-file-invoice-dollar aside_icon"></i></i>
                     <span>發票設定</span>
                     <i class="fa-solid fa-chevron-right fa-flip-vertical fa-lg drop_icon"></i>
                 </a>
@@ -85,13 +86,13 @@
             </li>
             <li class="matching_setting">
                 <a href="#">
-                    <i class="fa-solid fa-pen-to-square aside_icon"></i>
+                    <i id="mathcing_setting"><i class="fa-solid fa-pen-to-square aside_icon"></i></i>
                     <span>配號區間設定</span>
                 </a>
             </li>
             <li class="serial_setting">
                 <a href="#">
-                    <i class="fa-solid fa-network-wired aside_icon"></i>
+                    <i id="serial_setting"><i class="fa-solid fa-network-wired aside_icon"></i></i>
                     <span>字軌配號</span>
                     <i class="fa-solid fa-chevron-right fa-flip-vertical fa-lg drop_icon"></i>
                 </a>
@@ -120,27 +121,56 @@
         </ul>
     </aside>
 
-    <!-- Vertically centered modal -->
+    <!-- notification_dialog -->
     <div class="mask_noti">
         <div class="notification">
             <div class="top_content">
                 <p>通知</p>
-                <i class="fa-solid fa-xmark" id="noti_xmark"></i>
+                <i id="xmark"><i class="fa-solid fa-xmark noti_xmark"></i></i>
                 <button class="noti_delete">刪除</button>
             </div>
             <div class="noti_message">
-                <div class="line">
+                <div class="message">
                     <span>油品匯開1、2月發票即將用完!</span>
                     <input type="checkbox">
                 </div>
-                <div class="line">
+                <div class="message">
                     <span>油品匯開1、2月發票即將用完!</span>
                     <input type="checkbox">
                 </div>
-                <div class="line">
+                <div class="message">
                     <span>油品匯開1、2月發票即將用完!</span>
                     <input type="checkbox">
                 </div>
+                <div class="message">
+                    <span>油品匯開1、2月發票即將用完!</span>
+                    <input type="checkbox">
+                </div>
+                <div class="message">
+                    <span>油品匯開1、2月發票即將用完!</span>
+                    <input type="checkbox">
+                </div>
+                <div class="message">
+                    <span>油品匯開1、2月發票即將用完!</span>
+                    <input type="checkbox">
+                </div>
+                <div class="message">
+                    <span>油品匯開1、2月發票即將用完!</span>
+                    <input type="checkbox">
+                </div>
+                <div class="message">
+                    <span>油品匯開1、2月發票即將用完!</span>
+                    <input type="checkbox">
+                </div>
+                <div class="message">
+                    <span>油品匯開1、2月發票即將用完!</span>
+                    <input type="checkbox">
+                </div>
+                <div class="message">
+                    <span>油品匯開1、2月發票即將用完!</span>
+                    <input type="checkbox">
+                </div>
+                
 
             </div>
         </div>
