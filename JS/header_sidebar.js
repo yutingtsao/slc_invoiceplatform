@@ -49,14 +49,7 @@ $(document).ready(function(){
     })
 
     // header特效
-    $(window).scroll(function() {
-        var scrollPos = $(window).scrollTop(); // 获取滚动位置
-        if (scrollPos > 50) { // 当滚动超过 50px 时
-            $('header').addClass('header_style'); // 添加类
-        } else {
-            $('header').removeClass('header_style'); // 移除类
-        }
-    });
+   
 })
 
 

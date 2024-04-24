@@ -1,0 +1,237 @@
+@import url(./reset.css);
+
+body{
+    font-family: "Noto Sans", sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: red !important;
+    font-weight: bold !important; 
+    line-height: 20px;
+}
+
+
+
+/* Content section */
+.main_content{
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    position: absolute;
+    top: 68px;
+    left: 303px;
+    right: 0;
+    bottom: 0;
+    flex: 1;
+    overflow-y: auto;
+    background-color: #FFFCF5;
+    padding-top: 104px;
+    align-items: center;
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    gap: 80px;
+    
+}
+
+
+/* 年度發票總使用數量&Selector */
+.content_1{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+
+.card_title_dropdown{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    gap: 1039px;
+    height: 64px;
+    width: 1416px;
+}
+
+
+.card_title_dropdown p{
+    font-size: 24px;
+    /* line-height: 20px; */
+    margin: 0;
+    /* align-self: flex-start; */
+}
+
+.form-select{
+    /* align-self: flex-end; */
+    width: 160px !important;
+    height: 40px;
+    color: #515151 !important;
+}
+.form-select:focus{
+    border-color: #952327 !important;
+    box-shadow: 0px 0px 4px 4px rgba(245, 27, 56, 0.1) !important;
+}
+
+
+/* card_section */
+.card_section{
+    color: #F9F9F9;
+    display: flex;
+    width: 1320px;
+    height: 124px;
+    justify-content: flex-start;
+    gap: 80px;
+}
+
+.card_section p {
+    font-size: 20px;
+    letter-spacing: 1.2px;
+}
+
+
+.card_section .card{
+    width:200px ;
+    height: 124px;
+    background-color: #7C5021;
+    color: #F9F9F9;
+    border-radius: 16px;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    box-shadow: 0px 0px 20px 4px rgba(245, 27, 56, 0.1);
+}
+
+
+
+.percentage{
+    /* width: 100%; */
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 154px;
+}
+
+.percentage span:nth-child(1){
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    
+}
+
+#arrow_trendup{
+    color: rgb(124, 248, 124)
+}
+
+
+/* invoice_setting&quick_setting */
+.content_2{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 1416px;
+    gap: 80px;
+}
+
+.invoie_search{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    align-self: flex-start;
+}
+
+/* content_2_title */
+.invoie_search p, .quick_matching_setting p{
+    font-size: 24px;
+    height: 64px;
+    line-height: 64px;
+    width: fit-content;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+/* invoice_search_bg */
+.small_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EFE2CB;
+    width: 404px;
+    height: 156px;
+    border-radius: 16px;
+    padding: 28px;
+    gap: 28px;
+}
+
+/* dropdown_label */
+.form-label{
+    color: #7C5021;
+}
+
+
+/* invoice_search_button & quick_matching_setting_button*/
+.invoice_search_button, .quick_matching_setting_button{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+}
+
+.eraser_bt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:120px;
+    height: 44px;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #952327;
+    background-color: #F9F9F9;
+    color: #952327;
+}
+
+.search_bt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:120px;
+    height: 44px;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: #E94C26;
+}
+
+
+
+.button_large{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:188px;
+    height: 44px;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: #E94C26;
+}
+
+
+#positive_bt_medium, #positive_bt_large{
+
+}

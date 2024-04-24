@@ -6,13 +6,14 @@ body{
     /* height: 1500px; */
     display: flex;
     flex-direction: column;
-    justify-content:flex-start;
-    align-items:flex-start ;
+    /* justify-content:flex-start;
+    align-items:flex-start ; */
     overflow: hidden;
     color: #745E48;
     font-size: 16px;
     font-weight: bold;
     position: relative;
+
 }
 
 /* *{
@@ -25,7 +26,8 @@ body{
 /* HEADER */
 
 header{
-    align-self: self-end;
+    top: 0;
+    right: 0;
     display: flex;
     width: 1617px;
     height: 68px;
@@ -35,20 +37,13 @@ header{
     overflow: hidden;
     padding: 0 32px 0 32px;
     box-sizing: border-box;
-    background-color: rgba(239, 226, 203, 0.5);
-    transition: background-color 0.3s, box-shadow 0.3s;
-    /* box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1); */
-    z-index: 1;
+    background-color: #EFE2CB;
+    /* transition: background-color 0.3s, box-shadow 0.3s; */
+    box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
+    z-index: 1000;
     color: #745E48;
     
 }
-
-.header_style{
-    background-color: #EFE2CB;
-    box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
-}
-
-
 
 
 header path:hover{
@@ -61,6 +56,7 @@ header path:hover{
 .toggle_icon, .search_icon, .noti_icon , .login_icon{
     width: 32px;
     height:32px;
+    line-height: 32px;
     /* font-size: 32px; */
 
 }
@@ -78,10 +74,8 @@ header path:hover{
     flex-direction: row;
     width: 375px;
     height: 40px;
-    line-height: 40px;
     justify-content: center;
-    align-items: center;
-    gap: 40px;
+    gap: 10px;
 }
 
 
@@ -91,15 +85,19 @@ header path:hover{
     height: 40px;
     background-color: #FFFCF5;
     border: 1px solid #E0E0E0;
-    padding: 4px 261px 4px 10px;
+    padding: 4px 0px 4px 10px;
     box-sizing: border-box;
     border-radius: 4px;
-    line-height: 40px;
 }
 
 .search_block:hover{
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.20);
     border: 1px solid #745E48;
+}
+
+#search{
+    align-self: center;
+    height: 32px;
 }
 
 /* user&log_out */
@@ -130,12 +128,14 @@ header path:hover{
 
 
 .user img{
-    display: block;
+    display: flex;
 }
 
 /* Sidebar */
 aside{
-    display: flex;
+    top: 0;
+    left: 0;
+    align-self: flex-start;
     width: 303px;
     height: 1024px;
     flex-direction: column;
@@ -145,6 +145,7 @@ aside{
     overflow: hidden;
     position: fixed;
     transition: left 0.3s ease;
+    z-index: 999;
 }
 
 aside a{
@@ -286,7 +287,7 @@ aside span{
     left: 0;
     top: 0;
     display: none;
-    z-index: 4;
+    z-index: 1001;
     /* position: fixed;
     top: -100%;
     right: -100%;
