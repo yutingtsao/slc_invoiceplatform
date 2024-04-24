@@ -25,15 +25,17 @@ $(document).ready(function(){
 
     $('#xmark').click(function(){
         $('.mask_noti').css('display','none')
-        window.history.back()
+        $(this).removeAttr('style')
+       
     })
 
     $('.mask_noti').click(function(){
         $(this).removeAttr('style')
+        
     })
     
     $('.notification').click(function(e){
-        e.stopPropagation()
+
     })
     
     // 刪除功能

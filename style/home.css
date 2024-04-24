@@ -218,7 +218,7 @@ body{
 
 
 
-.button_large{
+#positive_bt_large{
     display: flex;
     justify-content: center;
     align-items: center;
