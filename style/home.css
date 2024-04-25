@@ -8,38 +8,39 @@ body{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    background-color:#FFFCF5 !important ;
     height: 100vh;
     color: red !important;
     font-weight: bold !important; 
     line-height: 20px;
-    width: 100%;
-    height: 100vh;
-    /* overflow: hidden;
-    box-sizing: border-box; */
+    z-index: -1;
+    overflow: hidden;
+    /* box-sizing: border-box; */
+   
 }
 
 
 
 /* Content section */
 .main_content{
+    width: 1416px;
+    height: 652px;
     display: flex;
     flex-direction: column;
-    width: 1617px;
-    height: 956px;
     position: absolute;
-    top: 68px;
+    top: 186px;
     left: 303px;
     right: 0;
     bottom: 0;
     flex: 1;
     overflow-y: auto;
-    background-color: #FFFCF5;
-    padding-top: 104px;
+    /* background-color: #FFFCF5; */
+    margin: 0 auto 0 auto;
     align-items: center;
     /* border: 2px solid black; */
     box-sizing: border-box;
     gap: 80px;
-    overflow: hidden;
+    /* overflow: hidden; */
     
 }
 
@@ -264,8 +265,8 @@ body{
 }
 
 .add_unit_dialog{
-    width: 433px;
-    height: 1024px;
+    width: 434px;
+    height: 100vh;
     background-color: #ffffff;
     /* border:5px solid black ; */
     box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
@@ -276,7 +277,7 @@ body{
     right: -433px;
     transition: right 0.1.5s;
     display: flex;
-    padding: 158px 0;
+    
     
 }
 
