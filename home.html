@@ -20,7 +20,7 @@
     <div class="content_1">
         <div class="card_title_dropdown">
             <p>年度發票總使用數量</p>
-            <select class="form-select" id="year" required>
+            <select class="form-select " id="custom-input-sm" required>
                 <option value="">2024</option>
                 <option>2023</option>
                 <option>2022</option>
@@ -77,35 +77,35 @@
         <div class="invoie_search">
             <p>發票狀態查詢-基本設定</p>
             <div class="small_block">
-                <div class="dropdown_1">
+                <div class="dropdown_sm">
                     <label for="year" class="form-label">年份</label>
-                    <select class="form-select" id="year" required>
+                    <select class="form-select" id="custom-input-sm" required>
                         <option value="">請選擇年份</option>
                         <option>2024</option>
                         <option>2023</option>
                     </select>
                 </div>
-                <div class="dropdown_2">
+                <div class="dropdown_sm">
                     <label for="month" class="form-label">月份</label>
-                    <select class="form-select" id="month" required>
+                    <select class="form-select" id="custom-input-sm" required>
                         <option value="">請選擇月份</option>
                         <option>1月</option>
                         <option>2月</option>
                     </select>
                 </div>
             </div>
-            <div class="invoice_search_button">
-                <button class="eraser_bt" id="negative_bt_medium"><i class="fa-solid fa-eraser"></i>清空</button>
-                <button class="search_bt" id="positive_bt_medium"><i class="fa-solid fa-check"></i>查詢</button>
+            <div class="button_group">
+                <button class="eraser_bt" id="negative_bt-sm"><i class="fa-solid fa-eraser"></i>清空</button>
+                <button class="search_bt" id="positive_bt-sm"><i class="fa-solid fa-magnifying-glass"></i>查詢</button>
     
             </div>
 
         </div>
         <div class="quick_matching_setting">
             <p>配號區間設定</p>
-            <div class="quick_matching_setting_button">
-                <button class="add_unit_bt" id="positive_bt_large"><i class="fa-solid fa-plus"></i>新增區間單位</button>
-                <button class="add_range_bt" id="positive_bt_large"><i class="fa-solid fa-plus"></i>新增區間功能</button>
+            <div class="button_group">
+                <button class="add_unit_bt" id="positive_bt-lg"><i class="fa-solid fa-plus"></i>新增區間單位</button>
+                <button class="add_range_bt" id="positive_bt-lg"><i class="fa-solid fa-plus"></i>新增區間功能</button>
             </div>
         </div>
 
@@ -114,12 +114,56 @@
     <div class="mask_add_unit">
         <div class="add_unit_dialog">
             <i id="add_unit-xmark"><i class="fa-solid fa-xmark xmark_icon" style="color: #745e48;"></i></i>
-            <div class="add_unit_dialog-section">
-                <p>新增區段單位</p>
+            <div class="dialog_wrapper-lg">
+                <div class="dialog_wrapper-m">
+                    <p>新增區段單位</p>
+                    <div class="dialog_wrapper-sm">
+                        <div class="input_group">
+                            <label for="unit" class="dialog-title_control">單位</label>
+                            <input type="text" class='form-control'id='custom-input-lg' placeholder="請填入單位" value="">
+                        </div>
+                        <div class="input_group">
+                            <label for="bp" class="dialog-title_control">BP</label>
+                            <input type="text" class='form-control'id='custom-input-lg' placeholder="請填入BP" value="">
+                        </div>
+                        <div class="input_group">
+                            <label for="tax-id" class="dialog-title_control">統編</label>
+                            <input type="text" class='form-control'id='custom-input-lg' placeholder="請填入統編" value="">
+                        </div>
+                        <div class="dropdown_m">
+                            <label for="type" class="form-label">類別</label>
+                            <select class="form-select" id="custom-input-m" required>
+                                <option value="">請選擇類別</option>
+                                <option>油品匯開</option>
+                                <option>油品POS</option>
+                                <option>油品POS2</option>
+                                <option>運輸SAP</option>
+                                <option>船務</option>
+                            </select>
+                        </div>
+                        <div class="dropdown_m">
+                            <label for="method" class="form-label">用途</label>
+                            <select class="form-select" id="custom-input-m" required>
+                                <option value="">請選擇用途</option>
+                                <option>WEB</option>  
+                            </select>
+                        </div>
+                        <div class="dropdown_m">
+                            <label for="user" class="form-label">新增人員</label>
+                            <select class="form-select" id="custom-input-m" required>
+                                <option value="">請選擇人員</option>
+                                <option>Tiffany</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
+            <div class="button_group">
+                <button class="cancel_bt" id="negative_bt-sm"><i class="fa-solid fa-xmark"></i>取消</button>
+                <button class="add_range_bt" id="positive_bt-sm"><i class="fa-solid fa-check"></i>確認</button>
             </div>
             
-          
+            </div>
         </div>
     </div>
 

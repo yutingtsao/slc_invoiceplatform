@@ -20,9 +20,18 @@ $(document).ready(function(){
             $('.mask_add_unit').css('display', 'none');// 关闭遮罩
          });
     })
+
+    $('.cancel_bt').click(function(){
+        console.log('Cancel button clicked');
+        $('.add_unit_dialog').animate({right: '-434px'},function() {
+            $('.mask_add_unit').css('display', 'none'); // 关闭遮罩
+         });
+    })
     
     $('.add_unit_dialog').click(function(e){
         e.stopPropagation()
     })
     
+   
+   
 })
