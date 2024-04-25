@@ -18,24 +18,27 @@ $(document).ready(function(){
 
     // 通知畫面
     $('#noti').click(function(){
+        $('.mask_noti').css({right:"-433px"})
         $('.notification').animate({right:"0px"})
         $('.mask_noti').css('display','block')
-        $('.mask_noti').animate({right:"-433px"})
+        
     })
 
     $('#xmark').click(function(){
-        $('.mask_noti').css('display','none')
-        $(this).removeAttr('style')
+        $('.notification').animate({right: '-433px'},function() {
+            $('.mask_noti').css('display', 'none'); // 关闭遮罩
+         });
        
     })
 
     $('.mask_noti').click(function(){
-        $(this).removeAttr('style')
-        
+        $('.notification').animate({right: '-433px'},function() {
+            $('.mask_noti').css('display', 'none');// 关闭遮罩
+         });
     })
     
     $('.notification').click(function(e){
-
+        e.stopPropagation()
     })
     
     // 刪除功能
