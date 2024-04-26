@@ -42,16 +42,16 @@ $(document).ready(function(){
     for (var y= -range; y<= range; y++){
         var year = currentYear+y;
         var $option = $('<option>').val(year).text(year);
-        $('#year-select').append($option);
+        $('.year-select').append($option);
     }
     // 4.設定預設選擇值：
     // 這行程式碼將選擇器的預設值設定為當前年份。
-    $('#year-select').val(currentYear);
+    $('.year-select').val(currentYear);
 
 
     // 月份範圍選擇器，自動顯示12個月分r
     // 1.選擇器初始化：
-    var $monthSelect = $('#month-select')
+    var $monthSelect = $('.month-select')
     //2.清空現有的選項，保留 "請選擇月份"
     $monthSelect.find('option:not(:first)').remove();
     // 3.添加12個月份
@@ -117,4 +117,59 @@ $(document).ready(function(){
     }
 
 
+    $('#unit-select').change(function() { // 当选择单位时
+        var selectedUnit = $(this).val(); // 获取所选值
+
+        // 根据选择的单位加载数据，并填入其他字段
+        if (selectedUnit) {
+            loadUnitData(selectedUnit); // 调用自定义函数加载数据
+        }
+    });
+
+
+    $('.unit-select').select2();
+
+
+    $('.unit-select').change(function() { // 当选择一个单位时
+        var selectedUnit = $(this).val(); // 获取选择的单位
+        loadUnitData(selectedUnit); // 传递给函数
+    });
+    
+    function loadUnitData(unit) {
+        // 示例数据，可以替换为实际数据库数据
+        var unitData = {
+            '山隆通運-總公司': {
+                bp: 'L110',
+                indent: 'AK',
+                type: '匯開',
+                method: 'WEB'
+            },
+            '山隆通運-電子發票(L11A)': {
+                bp: 'L11A',
+                indent: 'AK',
+                type: '天吉POS',
+                method: 'API'
+            }
+        };
+    
+        var data = unitData[unit]; // 根据单位选择数据
+    
+        if (data) {
+            $('.bp-input').val(data.bp); // 填入 BP
+            $('.indent-input').val(data.indent); // 填入字轨
+            $('.type-select').val(data.type); // 设置类别
+            $('.method-select').val(data.method); // 设置用途
+        }
+
+        
+    }
+
+    $('.unit-select').change(function() { // 当选择单位时
+        var selectedUnit = $(this).val(); // 获取选择的单位
+        loadUnitData(selectedUnit); // 加载数据
+        console.log('Unit changed:', selectedUnit);
+    });
+    
+
+   
 })

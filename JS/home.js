@@ -23,9 +23,10 @@ $(document).ready(function(){
     })
 
     $('.cancel_bt').click(function(){
-        console.log('Cancel button clicked');
         $('.add_unit_dialog').animate({right: '-434px'},function() {
             $('.mask_add_unit').css('display', 'none'); // 关闭遮罩
+            $('.add_unit_dialog input').val(''); // 清空所有输入框
+            $('.add_unit_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
          });
     })
     
@@ -55,10 +56,12 @@ $(document).ready(function(){
 
 
     $('.cancel_bt').click(function(){
-        console.log('Cancel button clicked');
         $('.add_range_dialog').animate({right: '-434px'},function() {
             $('.mask_range_unit').css('display', 'none'); // 关闭遮罩
-         });
+            $('.add_range_dialog input').val(''); // 清空所有输入框
+            $('.add_range_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
+            console.log('Reset complete'); // 确认重置
+        });
     })
 
     $('.add_range_dialog').click(function(e){

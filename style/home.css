@@ -229,7 +229,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 80px;
+    gap: 40px;
     height:fit-content;
 
 }
@@ -306,3 +306,29 @@ body{
     justify-content: center;
     color: #5E3C30;
 }
+
+.dialog_wrapper-lg1{
+    width: 348px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    height:fit-content;
+}
+
+.dialog_wrapper-xs{
+    display: flex;
+    gap: 28px;
+}
+
+.dialog_wrapper-m{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    /* border: 2px solid black; */
+    width: 100%;
+    height:fit-content;
+}
+

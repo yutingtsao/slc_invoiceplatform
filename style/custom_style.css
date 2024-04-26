@@ -68,6 +68,26 @@ title-large{
     border-radius: 4px ;
 }
 
+/* selector with input function */
+.select2-container--default .select2-selection--single {
+    display: flex;
+    width: 280px !important;
+    border: 1px solid #E2E2E2 !important; /* 保留原本的边框 */
+    height: 40px !important; /* 保留原本的高度 */
+    padding: 4px 10px; /* 保留原本的内边距 */
+    display: flex;
+    align-items: center;
+    color: #515151; /* 保留原本的字体颜色 */
+}
+
+/* 调整圆角边框 */
+.select2-container--default .select2-selection--single {
+    border-radius: 4px; /* 保留原本的圆角边框 */
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    height: 40px !important;
+}
 
 
 .custom-input-lg:focus{
