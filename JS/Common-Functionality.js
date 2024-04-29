@@ -105,8 +105,8 @@ $(document).ready(function(){
     // 清空按鈕的點擊事件
     $('.eraser_bt').click(function() {
         // 清空選擇器的值
-        $('#year-select').val('');
-        $('#month-select').val('');
+        $('.year-select').val('');
+        $('.month-select').val('');
     });
 
     // 用於更新頁面內容的函數
