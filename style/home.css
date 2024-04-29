@@ -10,7 +10,7 @@ body{
     flex-direction: column;
     background-color:#FFFCF5 !important ;
     height: 100vh;
-    color: red !important;
+    color: #E94C26 !important;
     font-weight: bold !important; 
     line-height: 20px;
     z-index: -1;
@@ -135,74 +135,29 @@ body{
     gap: 80px;
 }
 
-.invoice_search{
+.quick_matching_setting{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-self: flex-start;
-    margin: 20px;
-}
-
-
-.button_group{
-    width: fit-content;
-    align-self: center;
-    
+    /* margin: 20px; */
 }
 
 
 /* content_2_title */
-.invoice_search p, .quick_matching_setting p{
+.quick_matching_setting p{
     font-size: 24px;
     height: 64px;
     line-height: 64px;
     width: fit-content;
     margin: 0;
     margin-bottom: 40px;
+    align-self: flex-start;
 }
 
-/* invoice_search_bg */
-.small_block{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #EFE2CB;
-    width: 404px;
-    height: 156px;
-    border-radius: 16px;
-    padding: 28px;
-    gap: 28px;
-}
 
-.modal-content{
-    position: relative;
-}
+/* 修改 Bootstrap 模态窗口的遮罩背景颜色 */
 
-.modal-header{
-    width: 100%;
-    margin: 0 auto;
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-    margin-top: 20px;
-
-}
-
-.modal-title{
-    width: fit-content;
-    margin: 0 auto;
-}
-
-.btn-close{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    margin: 0 !important;
-}
-
-.modal{
-    border-color: ;
-}
 
 
 /* Add Unit Function */
@@ -288,6 +243,7 @@ body{
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+    color: #7C5021;
 
 }
 

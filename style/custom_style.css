@@ -156,10 +156,78 @@ title-large{
 }
 
 /* Button_Group*/
-.button_group, .button_group{
-    margin-top: 40px;
+.button_group{
+    display: flex;
+    gap: 28px;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+
+.modal-backdrop.show {
+    background-color: rgba(0, 0, 0, 0.3); /* 设置半透明黑色背景 */
+}
+
+.invoice_search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px; */
+}
+
+
+/* content_2_title */
+.invoice_search p{
+    font-size: 24px;
+    height: 64px;
+    line-height: 64px;
+    width: fit-content;
+    margin: 0;
+    margin-bottom: 40px;
+    align-self: flex-start;
+}
+
+/* invoice_search_bg */
+.small_block{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #EFE2CB;
+    width: 404px;
+    height: 156px;
+    border-radius: 16px;
+    padding: 28px;
     gap: 28px;
+    margin-bottom: 40px;
+}
+
+
+
+.modal-content{
+    position: relative;
+}
+
+.modal-header{
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-top: 20px;
+
+}
+
+.modal-title{
+    width: fit-content;
+    margin: 0 auto;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bold; 
+   
+}
+
+.btn-close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0 !important;
 }

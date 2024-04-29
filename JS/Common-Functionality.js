@@ -107,6 +107,11 @@ $(document).ready(function(){
         // 清空選擇器的值
         $('.year-select').val('');
         $('.month-select').val('');
+        $('.change-status').val('');
+        $('.invoice-status').val('');
+        $('.error-status').val('');
+        $('.bp-input').val('');
+        $('.station-name').val('');
     });
 
     // 用於更新頁面內容的函數
