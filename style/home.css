@@ -1,47 +1,5 @@
 @import url(./reset.css);
 
-body{
-    font-family: "Noto Sans", sans-serif;
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background-color:#FFFCF5 !important ;
-    height: 100vh;
-    color: #E94C26 !important;
-    font-weight: bold !important; 
-    line-height: 20px;
-    z-index: -1;
-    overflow: hidden;
-    /* box-sizing: border-box; */
-}
-
-
-/* Content section */
-.main_content{
-    width: 1416px;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 186px;
-    left: 303px;
-    right: 0;
-    bottom: 0;
-    flex: 1;
-    overflow-y: auto;
-    /* background-color: #FFFCF5; */
-    margin: 0 auto 0 auto;
-    align-items: center;
-    /* border: 2px solid black; */
-    box-sizing: border-box;
-    gap: 80px;
-    /* overflow: hidden; */
-    
-}
-
 
 /* 年度發票總使用數量&Selector */
 .content_1{

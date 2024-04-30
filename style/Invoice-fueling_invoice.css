@@ -1,33 +1,6 @@
 @import url(./reset.css);
 
-body{
-    font-family: "Noto Sans", sans-serif;
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background-color:#FFFCF5 !important ;
-    height: 100vh;
-    color: #E94C26 !important;
-    font-weight: bold !important; 
-    line-height: 20px;
-    z-index: -1;
-    overflow: hidden;
 
-}
-
-
-.main_content{
-    display: flex;
-    width: 1532px;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: var(--Padding-Function-small, 28px) var(--Padding-Function-medium, 40px);
-    flex-wrap: wrap;
-
-}
 
 .invoice_top_content{
     display: flex;
