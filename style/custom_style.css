@@ -33,9 +33,9 @@ body{
 .main_content{
     display: flex;
     flex-direction: column;
-    width: 1537px;
+    width: 1617px;
     height: 100vh;
-    align-items: flex-start;
+    align-items: center;
     align-content: flex-start;
     /* position: absolute;
     top: 186px;
@@ -43,7 +43,8 @@ body{
     right: 0;
     bottom: 0; */
     padding-top: 128px;
-    margin-left: 350px;
+    margin-left: 303px;
+    /* margin-right: 50px; */
     overflow: hidden;
     overflow-y: auto;
     box-sizing: border-box;
@@ -53,9 +54,9 @@ body{
 }
 
 
-.fontawesome-i2svg-active,.fontawesome-i2svg-complete{
+/* .fontawesome-i2svg-active,.fontawesome-i2svg-complete{
     width: 1920px;
-}
+} */
 
 
 
