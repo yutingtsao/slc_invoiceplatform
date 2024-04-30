@@ -7,6 +7,7 @@
     flex-direction: column;
     gap: 40px;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 
@@ -101,17 +102,6 @@
     /* margin: 20px; */
 }
 
-
-/* content_2_title */
-.quick_matching_setting p{
-    font-size: 24px;
-    height: 64px;
-    line-height: 64px;
-    width: fit-content;
-    margin: 0;
-    margin-bottom: 40px;
-    align-self: flex-start;
-}
 
 
 /* 修改 Bootstrap 模态窗口的遮罩背景颜色 */

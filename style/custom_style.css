@@ -7,6 +7,7 @@ title-large{
     margin: 0;
     letter-spacing: 0.1px;
     color: #E94C26;
+    padding: 0;
 }
 
 
@@ -42,7 +43,7 @@ body{
     left: 303px;
     right: 0;
     bottom: 0; */
-    padding-top: 128px;
+    padding-top: 60px;
     margin-left: 303px;
     /* margin-right: 50px; */
     overflow: hidden;
@@ -229,10 +230,10 @@ body{
 
 
 /* content_2_title */
-.invoice_search p{
-    font-size: 24px;
-    height: 64px;
-    line-height: 64px;
+.invoice_search p, .quick_matching_setting p,.invoice_filter p,.iq-card p{
+    /* font-size: 24px; */
+    /* height: 64px; */
+    /* line-height: 64px; */
     width: fit-content;
     margin: 0;
     margin-bottom: 40px;
@@ -307,7 +308,13 @@ body{
 
 .iq-card-body tr{
     border-color: #dee2e6 !important;
+    
 }
+
+.table-dark tr th{
+    font-weight: bold !important; 
+}
+
 .iq-card-body td{
     color: #515151 !important;
 }

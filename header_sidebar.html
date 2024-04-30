@@ -53,7 +53,7 @@
                 
                     <ul class="dropdown_block1">
                         <li class="fueling-class">
-                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#fueling_invoice-popup">
                                 <i class="fa-solid fa-dash dash_icon"></i>
                                 <span>油品匯開</span>
                             </button>
@@ -64,7 +64,7 @@
                             
                         </li>
                         <li class="fueling-class">
-                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#fueling_pos-popup">
                                 <i class="fa-solid fa-dash dash_icon"></i>
                                 <span>油品POS</span>
                             </button>
@@ -74,7 +74,7 @@
                             </a> -->
                         </li>
                         <li class="fueling-class">
-                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#fueling_pos2-popup">
                                 <i class="fa-solid fa-dash dash_icon"></i>
                                 <span>油品POS2</span>
                             </button>
@@ -84,7 +84,7 @@
                             </a> -->
                         </li>
                         <li class="fueling-class">
-                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#transport_sap-popup">
                                 <i class="fa-solid fa-dash dash_icon"></i>
                                 <span>運輸SAP</span>
                             </button>
@@ -94,7 +94,7 @@
                             </a> -->
                         </li>
                         <li class="fueling-class">
-                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#shipping-popup">
                                 <i class="fa-solid fa-dash dash_icon"></i>
                                 <span>船務</span>
                             </button>
@@ -212,12 +212,14 @@
     </div>
 
 <!--Invoice-popup -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<!-- fueling_invoice-popup -->
+<div class="modal fade " id="fueling_invoice-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog  modal-dialog-centered">
     <div class="modal-content shadow">
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">基本設定</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><title-large>基本設定</title-large></h5>
         
       </div>
       <div class="modal-body">
@@ -238,13 +240,156 @@
             </div>
             <div class="button_group">
                 <button class="eraser_bt" id="negative_bt-sm"><i class="fa-solid fa-eraser"></i>清空</button>
-                <button class="search_bt" id="positive_bt-sm"><i class="fa-solid fa-magnifying-glass"></i>查詢</button>
+                <button class="fueling_invoice-popup-search_bt" id="positive_bt-sm"><i class="fa-solid fa-magnifying-glass"></i>查詢</button>
             </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- fueling_pos-popup -->
+<div class="modal fade " id="fueling_pos-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+      <div class="modal-content shadow">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><title-large>基本設定</title-large></h5>
+          
+        </div>
+        <div class="modal-body">
+          <div class="invoice_search">
+              <div class="small_block">
+                  <div class="dropdown_sm">
+                      <label for="year" class="form-label">年份</label>
+                      <select class="form-select custom-input-sm year-select" id="" required>
+                          <option value="">請選擇年份</option>
+                      </select>
+                  </div>
+                  <div class="dropdown_sm">
+                      <label for="month" class="form-label">月份</label>
+                      <select class="form-select custom-input-sm month-select" id="" required>
+                          <option value="">請選擇月份</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="button_group">
+                  <button class="eraser_bt" id="negative_bt-sm"><i class="fa-solid fa-eraser"></i>清空</button>
+                  <button class="fueling_pos-popup-search_bt" id="positive_bt-sm"><i class="fa-solid fa-magnifying-glass"></i>查詢</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- fueling_pos2-popup -->
+<div class="modal fade " id="fueling_pos2-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+      <div class="modal-content shadow">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><title-large>基本設定</title-large></h5>
+          
+        </div>
+        <div class="modal-body">
+          <div class="invoice_search">
+              <div class="small_block">
+                  <div class="dropdown_sm">
+                      <label for="year" class="form-label">年份</label>
+                      <select class="form-select custom-input-sm year-select" id="" required>
+                          <option value="">請選擇年份</option>
+                      </select>
+                  </div>
+                  <div class="dropdown_sm">
+                      <label for="month" class="form-label">月份</label>
+                      <select class="form-select custom-input-sm month-select" id="" required>
+                          <option value="">請選擇月份</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="button_group">
+                  <button class="eraser_bt" id="negative_bt-sm"><i class="fa-solid fa-eraser"></i>清空</button>
+                  <button class="fueling_pos2-popup-search_bt" id="positive_bt-sm"><i class="fa-solid fa-magnifying-glass"></i>查詢</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- transport_sap-popup -->
+<div class="modal fade " id="transport_sap-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+      <div class="modal-content shadow">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><title-large>基本設定</title-large></h5>
+          
+        </div>
+        <div class="modal-body">
+          <div class="invoice_search">
+              <div class="small_block">
+                  <div class="dropdown_sm">
+                      <label for="year" class="form-label">年份</label>
+                      <select class="form-select custom-input-sm year-select" id="" required>
+                          <option value="">請選擇年份</option>
+                      </select>
+                  </div>
+                  <div class="dropdown_sm">
+                      <label for="month" class="form-label">月份</label>
+                      <select class="form-select custom-input-sm month-select" id="" required>
+                          <option value="">請選擇月份</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="button_group">
+                  <button class="eraser_bt" id="negative_bt-sm"><i class="fa-solid fa-eraser"></i>清空</button>
+                  <button class="transport_sap-popup-search_bt" id="positive_bt-sm"><i class="fa-solid fa-magnifying-glass"></i>查詢</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- shipping-popup -->
+<div class="modal fade " id="shipping-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+      <div class="modal-content shadow">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><title-large>基本設定</title-large></h5>
+          
+        </div>
+        <div class="modal-body">
+          <div class="invoice_search">
+              <div class="small_block">
+                  <div class="dropdown_sm">
+                      <label for="year" class="form-label">年份</label>
+                      <select class="form-select custom-input-sm year-select" id="" required>
+                          <option value="">請選擇年份</option>
+                      </select>
+                  </div>
+                  <div class="dropdown_sm">
+                      <label for="month" class="form-label">月份</label>
+                      <select class="form-select custom-input-sm month-select" id="" required>
+                          <option value="">請選擇月份</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="button_group">
+                  <button class="eraser_bt" id="negative_bt-sm"><i class="fa-solid fa-eraser"></i>清空</button>
+                  <button class="shipping-popup-search_bt" id="positive_bt-sm"><i class="fa-solid fa-magnifying-glass"></i>查詢</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

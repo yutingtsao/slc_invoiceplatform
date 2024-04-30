@@ -6,7 +6,8 @@ $(document).ready(function(){
         $('.dropdown_block1').toggle('normal')
     })
 
-      
+
+// Popup color/hide and show(hover)
     $('.btn-link').click(function(event){
         var span = $(this).find('span');
         span.data('original-color', span.css('color')); // 存储原始颜色
@@ -21,13 +22,47 @@ $(document).ready(function(){
     })
     
 
-    $('#exampleModal').on('hidden.bs.modal',function(){
+    $('#fueling_invoice-popup').on('hidden.bs.modal',function(){
         // 恢复所有受影响的 <span> 元素到它们的原始颜色
         $('.btn-link').find('span').each(function() {
             var originalColor = $(this).data('original-color'); // 获取存储的原始颜色
             $(this).css('color', originalColor); // 恢复颜色
         });
     });   
+
+    $('#fueling_pos-popup').on('hidden.bs.modal',function(){
+        // 恢复所有受影响的 <span> 元素到它们的原始颜色
+        $('.btn-link').find('span').each(function() {
+            var originalColor = $(this).data('original-color'); // 获取存储的原始颜色
+            $(this).css('color', originalColor); // 恢复颜色
+        });
+    }); 
+
+    $('#fueling_pos2-popup').on('hidden.bs.modal',function(){
+        // 恢复所有受影响的 <span> 元素到它们的原始颜色
+        $('.btn-link').find('span').each(function() {
+            var originalColor = $(this).data('original-color'); // 获取存储的原始颜色
+            $(this).css('color', originalColor); // 恢复颜色
+        });
+    });
+
+    $('#transport_sap-popup').on('hidden.bs.modal',function(){
+        // 恢复所有受影响的 <span> 元素到它们的原始颜色
+        $('.btn-link').find('span').each(function() {
+            var originalColor = $(this).data('original-color'); // 获取存储的原始颜色
+            $(this).css('color', originalColor); // 恢复颜色
+        });
+    });
+
+    $('#shipping-popup').on('hidden.bs.modal',function(){
+        // 恢复所有受影响的 <span> 元素到它们的原始颜色
+        $('.btn-link').find('span').each(function() {
+            var originalColor = $(this).data('original-color'); // 获取存储的原始颜色
+            $(this).css('color', originalColor); // 恢复颜色
+        });
+    });
+
+
     
 
     $('.serial_setting').click(function(){

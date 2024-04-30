@@ -69,38 +69,58 @@ $(document).ready(function(){
     }
 
     // 查詢按鈕的點擊事件
-    $('.search_bt').click(function() {
-        // 獲取選擇的年份和月份
-        var selectedYear = $('#year-select').val();
-        var selectedMonth = $('#month-select').val();
-
-        // 確保有選擇值
-        if (selectedYear === '' || selectedMonth === '') {
-            alert('請選擇年份和月份');
-            return; // 如果沒選擇，顯示警告並退出
-        }
-
-        // 發送 Ajax 請求
-        $.ajax({
-            url: '/api/invoice-status', // 後端的查詢端點
-            method: 'GET', // 或 'POST'，根據後端的要求
-            data: {
-                year: selectedYear,
-                month: selectedMonth
-            },
-            success: function(response) {
-                // 成功時處理回應
-                console.log('查詢成功', response);
-                // 在這裡處理回應並更新頁面
-                updatePageWithResults(response);
-            },
-            error: function(error) {
-                // 失敗時處理錯誤
-                console.error('查詢失敗', error);
-                alert('查詢失敗，請稍後再試。');
-            }
-        });
+    $('.fueling_invoice-popup-search_bt').click(function() {
+        window.location.href = "../Invoice-fueling_invoice.html"
+        // var selectedYear = $('#year-select').val();
+        // var selectedMonth = $('#month-select').val();
+    
+        // if (selectedYear === '' || selectedMonth === '') {
+        //     alert('請選擇年份和月份');
+        //     return;
+        // }
+    
+        // $.ajax({
+        //     url: '/api/invoice-status',
+        //     method: 'GET',
+        //     data: {
+        //         year: selectedYear,
+        //         month: selectedMonth
+        //     },
+        //     success: function(response) {
+        //         console.log('查詢成功', response);
+        //         // 使用window.location.href导航到Invoice-fueling_invoice.html，并传递参数
+        //         window.location.href = `Invoice-fueling_invoice.html?year=${selectedYear}&month=${selectedMonth}`;
+    
+        //     },
+        //     error: function(error) {
+        //         console.error('查詢失敗', error);
+        //         alert('查詢失敗，請稍後再試。');
+        //     }
+        // });
     });
+
+
+    $('.fueling_pos-popup-search_bt').click(function() {
+        window.location.href = "../Invoice-fueling_pos.html"
+    });
+
+    $('.fueling_pos2-popup-search_bt').click(function() {
+        window.location.href = "../Invoice-fueling_pos2.html"
+    });
+
+
+    $('.fueling_pos2-popup-search_bt').click(function() {
+        window.location.href = "../Invoice-fueling_pos2.html"
+    });
+
+    $('.transport_sap-popup-search_bt').click(function() {
+        window.location.href = "../Invoice-transport_sap.html"
+    });
+
+    $('.shipping-popup-search_bt').click(function() {
+        window.location.href = "../Invoice-shipping.html"
+    });
+
 
     // 清空按鈕的點擊事件
     $('.eraser_bt').click(function() {
@@ -175,6 +195,7 @@ $(document).ready(function(){
         console.log('Unit changed:', selectedUnit);
     });
     
+
 
    
 })
