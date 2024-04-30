@@ -1,0 +1,45 @@
+@import url(./reset.css);
+
+
+
+.invoice_top_content{
+    display: flex;
+    width: 1532px;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 0px 40px;
+    
+}
+
+.invoice_filter{
+    display: flex;
+    width: 1088px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.filter_block{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #EFE2CB;
+    height: 156px;
+    border-radius: 16px;
+    padding: 28px;
+    /* gap: 28px; */
+    margin-bottom: 40px;
+    
+}
+
+
+
+
+
+  
