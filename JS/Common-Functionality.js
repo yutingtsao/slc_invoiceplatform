@@ -79,6 +79,8 @@ $('.add_unit_bt').click(function(){
 $('#add_unit-xmark').click(function(){
     $('.add_unit_dialog').animate({right: '-434px'},function() {
         $('.mask_add_unit').css('display', 'none'); // 关闭遮罩
+        $('.add_unit_dialog input').val(''); // 清空所有输入框
+        $('.add_unit_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
      });
  });
 
@@ -86,6 +88,9 @@ $('#add_unit-xmark').click(function(){
  $('.mask_add_unit').click(function(){
     $('.add_unit_dialog').animate({right: '-434px'},function() {
         $('.mask_add_unit').css('display', 'none');// 关闭遮罩
+        $('.mask_add_unit').css('display', 'none'); // 关闭遮罩
+        $('.add_unit_dialog input').val(''); // 清空所有输入框
+        $('.add_unit_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
      });
 })
 
@@ -103,9 +108,10 @@ $('.add_unit_dialog').click(function(e){
 
 // Popup dialog-編輯區間單位(首頁&配號區間設定)
  // 绑定编辑按钮事件
- $('.table_edit_bt').click(function() {
+
+$('.table_edit_bt').click(function(){
     var $row = $(this).closest('tr');
-    
+
     // 获取行数据
     var unit = $row.find('td').eq(2).text();
     var site = $row.find('td').eq(3).text();
@@ -120,10 +126,10 @@ $('.add_unit_dialog').click(function(e){
     $('#edit-type').val(category).change();
     $('#edit-method').val(purpose).change();
 
-    // 显示编辑对话框
-    $('.mask_edit_unit').css({right: "-434px"});
-    $('.edit_unit_dialog').animate({right: "0px"});
-    $('.mask_edit_unit').css('display', 'block');
+     // 显示编辑对话框
+     $('.mask_edit_unit').css({right: "-434px"});
+     $('.edit_unit_dialog').animate({right: "0px"});
+     $('.mask_edit_unit').css('display', 'block');
 
 });
 
@@ -131,6 +137,7 @@ $('.add_unit_dialog').click(function(e){
 $('#edit_unit-xmark').click(function(){
     $('.edit_unit_dialog').animate({right: '-434px'},function() {
         $('.mask_edit_unit').css('display', 'none'); // 关闭遮罩
+    
      });
  });
 
@@ -143,8 +150,6 @@ $('#edit_unit-xmark').click(function(){
 $('.cancel_bt').click(function(){
     $('.edit_unit_dialog').animate({right: '-434px'},function() {
         $('.mask_edit_unit').css('display', 'none'); // 关闭遮罩
-        $('.edit_unit_dialog input').val(''); // 清空所有输入框
-        $('.edit_unit_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
      });
 })
 
