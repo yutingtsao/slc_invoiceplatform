@@ -44,6 +44,48 @@ $(document).ready(function(){
         });
     }
 
+
+     // table一鍵刪除功能
+     $('.table_all_delete_bt').click(function() {
+        // 先收集所有被选中的行
+        var selectedRows = $('.iq-card-body tr').filter(function() {
+            return $(this).find('input[type="checkbox"]').is(':checked');
+        });
+    
+        // 确认是否进行删除
+        if (selectedRows.length > 0 && confirm('確定要刪除已勾選的' + selectedRows.length + '項嗎？')) {
+            selectedRows.each(function() {
+                $(this).remove(); // 删除选中的行
+            });
+    
+            updateSerialNumbers(); // 更新序号
+            saveNewOrder(); // 假设你有这个函数来保存新的排序状态
+        }
+    });
+    
+    
+    
+    // function saveNewOrder() {
+    //     // 收集所有当前的行顺序，通常是收集某个标识符
+    //     var order = $('.iq-card-body tr').map(function() {
+    //         return $(this).find('td').eq(2).text(); // 假设标识符在第三个td
+    //     }).get();
+    
+    //     $.ajax({
+    //         url: '/api/save-order',
+    //         type: 'POST',
+    //         contentType: 'application/json',
+    //         data: JSON.stringify({ order: order }),
+    //         success: function(response) {
+    //             console.log('Order saved successfully');
+    //         },
+    //         error: function() {
+    //             alert('Failed to save order');
+    //         }
+    //     });
+    // }
+    
+
     // // 函数：保存排序状态（需自行实现服务器端逻辑）
     // function saveSortOrder($row1, $row2) {
     //     // 可以在这里发送 AJAX 请求来保存顺序

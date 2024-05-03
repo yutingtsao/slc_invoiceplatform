@@ -102,13 +102,12 @@ $(document).ready(function(){
     
     // 刪除功能
     $('.noti_delete').click(function(){
-        $('.noti_delete').click(function(){
-            // 查找所有已选中的复选框，并删除其父级 'div.message'
-            $('.noti_message .message').each(function() {
-                if ($(this).find('input[type="checkbox"]').is(':checked')) {
-                    $(this).remove(); // 删除已选中的消息
-                }
-            })
+        // 查找所有已选中的复选框，并删除其父级 'div.message'
+        $('.noti_message .message').each(function() {
+            if ($(this).find('input[type="checkbox"]').is(':checked')) {
+                $(this).remove(); // 删除已选中的消息
+            }
+            
         })
     })
 
