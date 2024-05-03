@@ -94,7 +94,7 @@ td.checkbox-cell input {
     justify-content: space-between;
     align-items:center;
     height: auto;
-    width: 1508px;
+    /* width: 1532px; */
     height: 44px;
     margin-bottom: 28px;
 }

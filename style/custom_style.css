@@ -292,7 +292,7 @@ body{
 /* data-table/Invoice-fueling_invoice */
 .custom-width{
     width: 1532px !important;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .table-dark {
@@ -317,6 +317,11 @@ body{
 .table-dark tr th{
     font-weight: bold !important; 
 }
+
+.iq-card{
+    width: 1508px;
+}
+
 
 .iq-card-body td{
     color: #515151 !important;
