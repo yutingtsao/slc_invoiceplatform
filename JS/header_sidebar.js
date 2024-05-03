@@ -62,6 +62,14 @@ $(document).ready(function(){
         });
     });
 
+    $('#matching_function-popup').on('hidden.bs.modal',function(){
+        // 恢复所有受影响的 <span> 元素到它们的原始颜色
+        $('.btn-link').find('span').each(function() {
+            var originalColor = $(this).data('original-color'); // 获取存储的原始颜色
+            $(this).css('color', originalColor); // 恢复颜色
+        });
+    });
+
 
     
 

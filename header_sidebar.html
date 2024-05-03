@@ -120,7 +120,7 @@
                 
                     <ul class="dropdown_block2">
                         <li class="serial-class">
-                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#matching_function-popup">
                                 <i class="fa-solid fa-dash dash_icon"></i>
                                 <span>配號功能</span>
                             </button>
@@ -382,6 +382,42 @@
               <div class="button_group">
                   <button class="eraser_bt" id="negative_bt-sm"><i class="fa-solid fa-eraser"></i>清空</button>
                   <button class="shipping-popup-search_bt" id="positive_bt-sm"><i class="fa-solid fa-magnifying-glass"></i>查詢</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- matching_function -->
+<div class="modal fade " id="matching_function-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+      <div class="modal-content shadow">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><title-large>基本設定</title-large></h5>
+          
+        </div>
+        <div class="modal-body">
+          <div class="invoice_search">
+              <div class="small_block">
+                  <div class="dropdown_sm">
+                      <label for="year" class="form-label">年份</label>
+                      <select class="form-select custom-input-sm year-select" id="" required>
+                          <option value="">請選擇年份</option>
+                      </select>
+                  </div>
+                  <div class="dropdown_sm">
+                      <label for="month" class="form-label">月份</label>
+                      <select class="form-select custom-input-sm month-select" id="" required>
+                          <option value="">請選擇月份</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="button_group">
+                  <button class="eraser_bt" id="negative_bt-sm"><i class="fa-solid fa-eraser"></i>清空</button>
+                  <button class="matching_function-search_bt" id="positive_bt-sm"><i class="fa-solid fa-magnifying-glass"></i>查詢</button>
               </div>
           </div>
         </div>

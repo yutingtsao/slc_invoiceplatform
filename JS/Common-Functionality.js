@@ -106,6 +106,48 @@ $('.add_unit_dialog').click(function(e){
     e.stopPropagation()
 })
 
+
+// Popup dialog-新增區間功能(首頁&配號查詢頁面)
+
+$('.add_range_bt').click(function(){
+    $('.mask_range_unit').css({right:"-434px"})
+    $('.add_range_dialog').animate({right:"0px"})
+    $('.mask_range_unit').css('display','block')
+    
+})
+
+$('#add_range-xmark').click(function(){
+    $('.add_range_dialog').animate({right: '-434px'},function() {
+        $('.mask_range_unit').css('display', 'none'); // 关闭遮罩
+        $('.add_range_dialog input').val(''); // 清空所有输入框
+        $('.add_range_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
+        console.log('Reset complete'); // 确认重置
+     });
+ });
+
+$('.mask_range_unit').click(function(){
+    $('.add_range_dialog').animate({right: '-434px'},function() {
+        $('.mask_range_unit').css('display', 'none');// 关闭遮罩
+        $('.add_range_dialog input').val(''); // 清空所有输入框
+        $('.add_range_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
+     });
+})
+
+
+$('.cancel_bt').click(function(){
+    $('.add_range_dialog').animate({right: '-434px'},function() {
+        $('.mask_range_unit').css('display', 'none'); // 关闭遮罩
+        $('.add_range_dialog input').val(''); // 清空所有输入框
+        $('.add_range_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
+        console.log('Reset complete'); // 确认重置
+    });
+})
+
+$('.add_range_dialog').click(function(e){
+    e.stopPropagation()
+})
+
+
 // Popup dialog-編輯區間單位(首頁&配號區間設定)
  // 绑定编辑按钮事件
 
@@ -209,6 +251,10 @@ $('.edit_unit_dialog').click(function(e){
 
     $('.shipping-popup-search_bt').click(function() {
         window.location.href = "../Invoice-shipping.html"
+    });
+
+    $('.matching_function-search_bt').click(function() {
+        window.location.href = "../Matching-function.html"
     });
 
 
