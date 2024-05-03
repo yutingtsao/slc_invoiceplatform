@@ -8,6 +8,9 @@ title-large{
     letter-spacing: 0.1px;
     color: #E94C26;
     padding: 0;
+    /* width: fit-content !important; */
+    display: block;
+    width: max-content;
 }
 
 

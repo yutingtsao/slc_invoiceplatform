@@ -1,38 +1,7 @@
 $(document).ready(function(){
     $('#header_sidebar').load('../header_sidebar.html')
 
-    // Popup dialog
-    $('.add_unit_bt').click(function(){
-        $('.mask_add_unit').css({right:"-434px"})
-        $('.add_unit_dialog').animate({right:"0px"})
-        $('.mask_add_unit').css('display','block')
-        
-    })
-
-    $('#add_unit-xmark').click(function(){
-        $('.add_unit_dialog').animate({right: '-434px'},function() {
-            $('.mask_add_unit').css('display', 'none'); // 关闭遮罩
-         });
-     });
-
-
-     $('.mask_add_unit').click(function(){
-        $('.add_unit_dialog').animate({right: '-434px'},function() {
-            $('.mask_add_unit').css('display', 'none');// 关闭遮罩
-         });
-    })
-
-    $('.cancel_bt').click(function(){
-        $('.add_unit_dialog').animate({right: '-434px'},function() {
-            $('.mask_add_unit').css('display', 'none'); // 关闭遮罩
-            $('.add_unit_dialog input').val(''); // 清空所有输入框
-            $('.add_unit_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
-         });
-    })
     
-    $('.add_unit_dialog').click(function(e){
-        e.stopPropagation()
-    })
     
 
     $('.add_range_bt').click(function(){

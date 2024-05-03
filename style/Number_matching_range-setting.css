@@ -2,6 +2,7 @@
 
 
 
+
 .invoice_top_content{
     display: flex;
     width: 1532px;
@@ -19,6 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 
@@ -40,6 +42,61 @@
 
 
 
+.table_delete_bt,.table_edit_bt{
+    border: none;
+    background-color: transparent !important;
+    color: #745E48;
+    font-weight: bold;
+    
+}
 
 
+
+.iq-card-body td:nth-child(10){
+   width: 210px;
   
+}
+
+
+.iq-card-body th:nth-child(10){
+    text-align: center;
+}
+
+.iq-card-body td:nth-child(9){
+    text-align: center;
+    width: 120px;
+}
+
+
+.table_edit_bt{
+    float: right;
+}
+
+
+
+svg{
+    margin-right: 8px;
+  
+}
+
+td.checkbox-cell  {
+    text-align: center;
+    vertical-align: middle; /* 垂直居中 */
+}
+
+td.checkbox-cell input {
+    text-align: center;
+    vertical-align: middle; /* 垂直居中 */
+}
+
+.iq-header-title{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    height: auto;
+    width: 1508px;
+    height: 44px;
+    margin-bottom: 28px;
+}
+
+
