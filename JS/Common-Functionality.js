@@ -101,6 +101,57 @@ $('.add_unit_dialog').click(function(e){
     e.stopPropagation()
 })
 
+// Popup dialog-編輯區間單位(首頁&配號區間設定)
+ // 绑定编辑按钮事件
+ $('.table_edit_bt').click(function() {
+    var $row = $(this).closest('tr');
+    
+    // 获取行数据
+    var unit = $row.find('td').eq(2).text();
+    var site = $row.find('td').eq(3).text();
+    var taxId = $row.find('td').eq(4).text();
+    var category = $row.find('td').eq(6).text();
+    var purpose = $row.find('td').eq(7).text();
+
+    // 设置编辑对话框中的值
+    $('#edit-unit').val(unit);
+    $('#edit-bp').val(site);
+    $('#edit-tax-id').val(taxId);
+    $('#edit-type').val(category).change();
+    $('#edit-method').val(purpose).change();
+
+    // 显示编辑对话框
+    $('.mask_edit_unit').css({right: "-434px"});
+    $('.edit_unit_dialog').animate({right: "0px"});
+    $('.mask_edit_unit').css('display', 'block');
+
+});
+
+
+$('#edit_unit-xmark').click(function(){
+    $('.edit_unit_dialog').animate({right: '-434px'},function() {
+        $('.mask_edit_unit').css('display', 'none'); // 关闭遮罩
+     });
+ });
+
+ $('.mask_edit_unit').click(function(){
+    $('.edit_unit_dialog').animate({right: '-434px'},function() {
+        $('.mask_edit_unit').css('display', 'none');// 关闭遮罩
+     });
+})
+
+$('.cancel_bt').click(function(){
+    $('.edit_unit_dialog').animate({right: '-434px'},function() {
+        $('.mask_edit_unit').css('display', 'none'); // 关闭遮罩
+        $('.edit_unit_dialog input').val(''); // 清空所有输入框
+        $('.edit_unit_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
+     });
+})
+
+$('.edit_unit_dialog').click(function(e){
+    e.stopPropagation()
+})
+
 
     // 查詢按鈕的點擊事件
     $('.fueling_invoice-popup-search_bt').click(function() {

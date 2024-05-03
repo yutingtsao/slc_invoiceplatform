@@ -350,6 +350,67 @@
         </div>
     </div>
 </div>
+
+
+<!-- Edit Unit Dialog -->
+<div class="mask_edit_unit" style="display:none;">
+    <div class="edit_unit_dialog">
+        <i id="edit_unit-xmark" class="fa-solid fa-xmark xmark_icon" style="color: #745e48;"></i>
+        <div class="dialog_wrapper-lg">
+            <div class="dialog_wrapper-m">
+                <p><title-large>編輯區間單位</title-large></p>
+                <div class="dialog_wrapper-sm">
+                    <div class="input_group">
+                        <label for="edit-unit" class="form-label">單位</label>
+                        <input type="text" class='form-control custom-input-lg' id='edit-unit' placeholder="請填入單位">
+                    </div>
+                    <div class="input_group">
+                        <label for="edit-bp" class="form-label">BP</label>
+                        <input type="text" class='form-control custom-input-lg' id='edit-bp' placeholder="請填入BP">
+                    </div>
+                    <div class="input_group">
+                        <label for="edit-tax-id" class="form-label">統編</label>
+                        <input type="text" class='form-control custom-input-lg' id='edit-tax-id' placeholder="請填入統編">
+                    </div>
+                    <div class="dropdown_m">
+                        <label for="edit-type" class="form-label">類別</label>
+                        <select class="form-select custom-input-m" id="edit-type" required>
+                            <option value="">請選擇類別</option>
+                            <option>天吉POS</option>
+                            <option>正星</option>
+                            <option>匯開</option>
+                            <option>SAP</option>
+                            <option>船務</option>
+                            <option>汽車</option>
+                        </select>
+                    </div>
+                    <div class="dropdown_m">
+                        <label for="edit-method" class="form-label">用途</label>
+                        <select class="form-select custom-input-m" id="edit-method" required>
+                            <option value="">請選擇用途</option>
+                            <option>WEB</option>  
+                            <option>API</option>
+                            <option>其他加值中心</option> 
+                            <option>其他收入</option>  
+                        </select>
+                    </div>
+                    <div class="dropdown_m">
+                        <label for="user" class="form-label">新增人員</label>
+                        <select class="form-select custom-input-m" id="" required disabled>
+                            <option value="">Tiffany</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button_group">
+                <button class="cancel_bt" id="negative_bt-sm"><i class="fa-solid fa-xmark"></i>取消</button>
+                <button class="edit_unit_bt" id="positive_bt-sm"><i class="fa-solid fa-check"></i>確認</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./JS/Number_matching_range-setting.js"></script>
     <script src="./JS/header_sidebar.js"></script>
