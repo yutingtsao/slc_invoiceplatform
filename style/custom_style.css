@@ -117,10 +117,16 @@ body{
     width: 280px !important;
     height: 40px;
     align-items: center;
-    border: 1px solid #E2E2E2;
+    border-color: #E2E2E2 !important;
     padding: 4px 0px 4px 10px;
     color: #515151;
     border-radius: 4px ;
+}
+
+.custom-input-lg:focus{
+    border-color: #952327 !important;
+    box-shadow: 0px 0px 4px 4px rgba(245, 27, 56, 0.1) !important;
+    
 }
 
 /* selector with input function */
@@ -243,19 +249,15 @@ body{
     background-color: rgba(0, 0, 0, 0.3); /* 设置半透明黑色背景 */
 }
 
-.invoice_search{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* margin: 20px; */
-}
+
+
+
 
 /* TOP_SCROLL */
 
 
 /* content_2_title */
-.invoice_search p, .quick_matching_setting p,.invoice_filter p,.iq-card p{
+.invoice_search p, .quick_matching_setting p,.invoice_filter p,.iq-card p,.range_setting p,.serial_month_setting p{
     /* font-size: 24px; */
     /* height: 64px; */
     /* line-height: 64px; */
@@ -265,8 +267,17 @@ body{
     align-self: flex-start;
 }
 
-/* invoice_search_bg */
-.small_block{
+
+/* search&filter_section */
+.invoice_search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px; */
+}
+
+.normal_setting{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -277,6 +288,15 @@ body{
     padding: 28px;
     gap: 28px;
     margin-bottom: 40px;
+}
+
+.invoice_filter{
+    display: flex;
+    width: 1088px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 

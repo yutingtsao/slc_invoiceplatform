@@ -5,65 +5,16 @@ $(document).ready(function(){
     // 初始化序号
     updateSerialNumbers();
 
-    // 绑定删除按钮点击事件
-    $('.table_delete_bt').click(function() {
-        var $row = $(this).closest('tr');
-        var siteName = $row.find('td').eq(3).text();  // 假设站点名称位于第四个td
+    
 
-        // 确认是否要删除行，包括站点名称
-        if (confirm("確定要删除這個站點：" + siteName + " 嗎？")) {
-            $row.remove(); // 删除当前行
-            updateSerialNumbers(); // 更新序号
-        }
-    });
-
-    // 绑定上移按钮点击事件
-    $("tbody").on("click", ".move-up", function () {
-        var $row = $(this).closest("tr");
-        if ($row.index() > 0) {
-            $row.prev().before($row);
-            updateSerialNumbers(); // 更新序号
-            saveSortOrder($row, $row.prev()); // 保存排序
-        }
-    });
-
-    // 绑定下移按钮点击事件
-    $("tbody").on("click", ".move-down", function () {
-        var $row = $(this).closest("tr");
-        if ($row.index() < $("tbody tr").length - 1) {
-            $row.next().after($row);
-            updateSerialNumbers(); // 更新序号
-            saveSortOrder($row, $row.next()); // 保存排序
-        }
-    });
 
     // 函数：更新所有行的序号
     function updateSerialNumbers() {
         $('tbody tr').each(function(index) {
-            $(this).find('td:eq(1)').text(index + 1); // 设置序号为当前行的索引 + 1
+            $(this).find('td:eq(0)').text(index + 1); // 设置序号为当前行的索引 + 1
         });
     }
 
-
-     // table一鍵刪除功能
-     $('.table_all_delete_bt').click(function() {
-        // 先收集所有被选中的行
-        var selectedRows = $('.iq-card-body tr').filter(function() {
-            return $(this).find('input[type="checkbox"]').is(':checked');
-        });
-    
-        // 确认是否进行删除
-        if (selectedRows.length > 0 && confirm('確定要刪除已勾選的' + selectedRows.length + '項嗎？')) {
-            selectedRows.each(function() {
-                $(this).remove(); // 删除选中的行
-            });
-    
-            updateSerialNumbers(); // 更新序号
-            saveNewOrder(); // 假设你有这个函数来保存新的排序状态
-        }
-    });
-    
-    
     
     // function saveNewOrder() {
     //     // 收集所有当前的行顺序，通常是收集某个标识符
