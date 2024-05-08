@@ -112,7 +112,30 @@ body{
     
 }
 
-.custom-input-lg{
+.custom-input-l{
+    display: flex;
+    width: 240px !important;
+    height: 40px;
+    align-items: center;
+    border-color: #E2E2E2 !important;
+    padding: 4px 0px 4px 10px;
+    color: #515151;
+    border-radius: 4px ;
+}
+
+.custom-input-l:focus{
+    display: flex;
+    width: 240px !important;
+    height: 40px;
+    align-items: center;
+    border-color: #E2E2E2 !important;
+    padding: 4px 0px 4px 10px;
+    color: #515151;
+    border-radius: 4px ;
+}
+
+
+.custom-input-xl{
     display: flex;
     width: 280px !important;
     height: 40px;
@@ -123,7 +146,7 @@ body{
     border-radius: 4px ;
 }
 
-.custom-input-lg:focus{
+.custom-input-xl:focus{
     border-color: #952327 !important;
     box-shadow: 0px 0px 4px 4px rgba(245, 27, 56, 0.1) !important;
     
@@ -151,7 +174,7 @@ body{
 }
 
 
-.custom-input-lg:focus{
+.custom-input-xl:focus{
     border: #952327 ;
     box-shadow: 0px 0px 4px 4px rgba(245, 27, 56, 0.1) !important;
 
@@ -257,7 +280,7 @@ body{
 
 
 /* content_2_title */
-.invoice_search p, .quick_matching_setting p,.invoice_filter p,.iq-card p,.range_setting p,.serial_month_setting p{
+.invoice_search p, .quick_matching_setting p,.invoice_filter p,.iq-card p,.range_setting p,.serial_month_setting p, .matching-search_setting p,.matching-search_filter p{
     /* font-size: 24px; */
     /* height: 64px; */
     /* line-height: 64px; */

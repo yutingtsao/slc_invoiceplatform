@@ -2,6 +2,7 @@ $(document).ready(function(){
     // 加载侧边栏内容
     $('#header_sidebar').load('../header_sidebar.html');
 
+    
     updateSerialNumbers();
 
     
@@ -11,6 +12,8 @@ $(document).ready(function(){
         });
     }
 
+
+     
     
 })
 
