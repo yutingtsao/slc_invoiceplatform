@@ -147,6 +147,60 @@ $('.add_range_dialog').click(function(e){
     e.stopPropagation()
 })
 
+// 新增區間功能popup-單位自動填入數據
+$('#unit-select').change(function() { // 当选择单位时
+    var selectedUnit = $(this).val(); // 获取所选值
+
+    // 根据选择的单位加载数据，并填入其他字段
+    if (selectedUnit) {
+        loadUnitData(selectedUnit); // 调用自定义函数加载数据
+    }
+});
+
+
+$('.unit-select').select2();
+
+
+$('.unit-select').change(function() { // 当选择一个单位时
+    var selectedUnit = $(this).val(); // 获取选择的单位
+    loadUnitData(selectedUnit); // 传递给函数
+});
+
+function loadUnitData(unit) {
+    // 示例数据，可以替换为实际数据库数据
+    var unitData = {
+        '山隆通運-總公司': {
+            bp: 'L110',
+            indent: 'AK',
+            type: '匯開',
+            method: 'WEB'
+        },
+        '山隆通運-電子發票(L11A)': {
+            bp: 'L11A',
+            indent: 'AK',
+            type: '天吉POS',
+            method: 'API'
+        }
+    };
+
+    var data = unitData[unit]; // 根据单位选择数据
+
+    if (data) {
+        $('.bp-input').val(data.bp); // 填入 BP
+        $('.indent-input').val(data.indent); // 填入字轨
+        $('.type-select').val(data.type); // 设置类别
+        $('.method-select').val(data.method); // 设置用途
+    }
+
+    
+}
+
+$('.unit-select').change(function() { // 当选择单位时
+    var selectedUnit = $(this).val(); // 获取选择的单位
+    loadUnitData(selectedUnit); // 加载数据
+    console.log('Unit changed:', selectedUnit);
+});
+
 
 // Popup dialog-編輯區間單位(首頁&配號區間設定)
  // 绑定编辑按钮事件
@@ -199,7 +253,7 @@ $('.edit_unit_dialog').click(function(e){
     e.stopPropagation()
 })
 
-
+// Sidebar-popup導入個頁面
     // 查詢按鈕的點擊事件
     $('.fueling_invoice-popup-search_bt').click(function() {
         window.location.href = "../Invoice-fueling_invoice.html"
@@ -258,7 +312,9 @@ $('.edit_unit_dialog').click(function(e){
     });
 
 
-    // 清空按鈕的點擊事件
+
+
+// 清空按鈕的點擊事件
     $('.eraser_bt').click(function() {
         // 清空選擇器的值
         $('.year-select').val('');
@@ -278,58 +334,6 @@ $('.edit_unit_dialog').click(function(e){
     }
 
 
-    $('#unit-select').change(function() { // 当选择单位时
-        var selectedUnit = $(this).val(); // 获取所选值
-
-        // 根据选择的单位加载数据，并填入其他字段
-        if (selectedUnit) {
-            loadUnitData(selectedUnit); // 调用自定义函数加载数据
-        }
-    });
-
-
-    $('.unit-select').select2();
-
-
-    $('.unit-select').change(function() { // 当选择一个单位时
-        var selectedUnit = $(this).val(); // 获取选择的单位
-        loadUnitData(selectedUnit); // 传递给函数
-    });
-    
-    function loadUnitData(unit) {
-        // 示例数据，可以替换为实际数据库数据
-        var unitData = {
-            '山隆通運-總公司': {
-                bp: 'L110',
-                indent: 'AK',
-                type: '匯開',
-                method: 'WEB'
-            },
-            '山隆通運-電子發票(L11A)': {
-                bp: 'L11A',
-                indent: 'AK',
-                type: '天吉POS',
-                method: 'API'
-            }
-        };
-    
-        var data = unitData[unit]; // 根据单位选择数据
-    
-        if (data) {
-            $('.bp-input').val(data.bp); // 填入 BP
-            $('.indent-input').val(data.indent); // 填入字轨
-            $('.type-select').val(data.type); // 设置类别
-            $('.method-select').val(data.method); // 设置用途
-        }
-
-        
-    }
-
-    $('.unit-select').change(function() { // 当选择单位时
-        var selectedUnit = $(this).val(); // 获取选择的单位
-        loadUnitData(selectedUnit); // 加载数据
-        console.log('Unit changed:', selectedUnit);
-    });
     
 
 
