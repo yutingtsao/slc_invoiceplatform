@@ -125,5 +125,6 @@ td.checkbox-cell input {
 .confirm_matching_bt{
     align-self: flex-end;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 
