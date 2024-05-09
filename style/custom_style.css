@@ -582,6 +582,12 @@ body{
     color: #5E3C30;
 }
 
+
 table tbody {
     --bs-table-bg:none;
+}
+
+
+table tfoot {
+    --bs-table-bg:#EFE2CB !important;
 }
