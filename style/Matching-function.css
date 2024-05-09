@@ -122,9 +122,60 @@ td.checkbox-cell input {
 }
 
 
+
+
 .confirm_matching_bt{
     align-self: flex-end;
     margin-right: 20px;
     margin-bottom: 20px;
 }
 
+
+
+
+.confirm_matching_dialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px; */
+}
+
+
+/* .confirm_matching_dialog p{
+    width: fit-content;
+    margin: 0;
+    margin-bottom: 40px;
+    align-self: flex-start;
+} */
+
+
+
+.confirm_setting{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* background-color: #EFE2CB; */
+    width: 404px;
+    height: 156px;
+    border-radius: 16px;
+    padding: 28px;
+    /* gap: 28px; */
+    /* margin-bottom: 20px; */
+    color: #5E3C30;
+    /* text-indent: 12px; */
+    /* overflow: hidden; */
+}
+
+
+.confirm_message{
+    display: flex;
+    height: 68px;
+    /* border-bottom: 2px solid #DDDDDD; */
+    align-items: center;
+    /* gap: 120px; */
+    text-indent: 12px;
+
+}
