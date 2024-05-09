@@ -455,7 +455,7 @@ body{
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 40px;
+    gap: 20px;
     /* border: 2px solid black; */
     width: 100%;
     height:fit-content;
@@ -531,15 +531,17 @@ body{
     align-items: center;
     justify-content: center;
     color: #5E3C30;
+    
 }
 
 .dialog_wrapper-lg1{
     width: 348px;
+    /* height: 801px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 80px;
+    gap: 40px;
     height:fit-content;
 }
 
