@@ -52,17 +52,22 @@
 
 
 
-.iq-card-body td:nth-child(10){
+.iq-card-body td:nth-child(11){
    width: 210px;
   
 }
 
 
+.iq-card-body th:nth-child(11){
+    text-align: center;
+}
+
 .iq-card-body th:nth-child(10){
     text-align: center;
 }
 
-.iq-card-body td:nth-child(9){
+
+.iq-card-body td:nth-child(10){
     text-align: center;
     width: 120px;
 }
