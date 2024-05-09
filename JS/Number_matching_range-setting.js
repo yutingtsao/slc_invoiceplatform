@@ -18,8 +18,8 @@ $(document).ready(function(){
                 $(this).remove(); // 删除选中的行
             });
     
-            // updateSerialNumbers(); // 更新序号
-            // saveNewOrder(); // 假设你有这个函数来保存新的排序状态
+            updateSerialNumbers(); // 更新序号
+            saveNewOrder(); // 假设你有这个函数来保存新的排序状态
         }
     });
     // // 初始化序号
@@ -67,7 +67,7 @@ $(document).ready(function(){
 
 
     // 移動按鈕(順序調整，序列號不影響)
-    
+
      // 綁定點擊事件到包含移動圖標的td元素
      $('td').has('.fa-bars').click(function() {
         var currentRow = $(this).closest('tr'); // 獲取當前行
