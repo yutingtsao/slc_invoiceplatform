@@ -581,3 +581,7 @@ body{
     justify-content: center;
     color: #5E3C30;
 }
+
+table tbody {
+    --bs-table-bg:none;
+}
