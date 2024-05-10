@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="./style/home.css">
     <link rel="stylesheet" href="./style/custom_style.css">
     <link rel="stylesheet" href="./style/Matching-search.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/css/select2.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -379,8 +381,98 @@
 
 
 
+<!-- Add Single-Range Function -->
+<div class="mask_single_range_unit">
+    <div class="single_add_range_dialog">
+        <i id="single_add_range-xmark"><i class="fa-solid fa-xmark xmark_icon" style="color: #745e48;"></i></i>
+        <div class="dialog_wrapper-lg1">
+            <div class="dialog_wrapper-m">
+                <p><title-large>新增區間功能</title-large></p>
+                <div class="dialog_wrapper-sm">
+                    <div class="dialog_wrapper-xs">
+                        <div class="dropdown_sm">
+                            <label for="year" class="form-label">年份</label>
+                            <select class="form-select custom-input-sm year-select" id="" required disabled>
+                                <option value="">請選擇年份</option>
+                            </select>
+                        </div>
+                        <div class="dropdown_sm">
+                            <label for="month" class="form-label">月份</label>
+                            <select class="form-select custom-input-sm month-select" id="" required disabled >
+                                <option value="">請選擇月份</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="dropdown_sm">
+                        <div class="input_group">
+                            <label for="unit" class="dialog-title_control">單位</label>
+                            <input type="text" class='form-control custom-input-xl'id='' placeholder="" value="" disabled>
+                        </div>
+                    </div>
+                    <div class="dialog_wrapper-xs">
+                        <div class="input_group">
+                            <label for="bp" class="dialog-title_control">BP</label>
+                            <input type="text" class='form-control custom-input-sm bp-input'id='' placeholder="" value="" disabled>
+                        </div>
+                        <div class="input_group">
+                            <label for="indent" class="dialog-title_control">字軌</label>
+                            <input type="text" class='form-control custom-input-sm indent-input'id='' placeholder="" value="" disabled >
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown_m">
+                        <label for="type" class="form-label">類別</label>
+                        <select class="form-select custom-input-m type-select" id="" required disabled>
+                            <option value=""></option>
+                            <option>天吉POS</option>
+                            <option>正星</option>
+                            <option>匯開</option>
+                            <option>SAP</option>
+                            <option>船務</option>
+                            <option>汽車</option>
+                        </select>
+                    </div>
+                    <div class="dropdown_m">
+                        <label for="method" class="form-label">用途</label>
+                        <select class="form-select custom-input-m method-select" id="" required disabled>
+                            <option value=""></option>
+                            <option>WEB</option>  
+                            <option>API</option>
+                            <option>其他加值中心</option> 
+                            <option>其他收入</option> 
+                        </select>
+                    </div>
+                    <div class="input_group">
+                        <label for="unit" class="dialog-title_control">張數</label>
+                        <input type="text" class='form-control custom-input-xl'id='' placeholder="請填入張數" value="">
+                    </div>
+                    <div class="input_group">
+                        <label for="unit" class="dialog-title_control">發票開始</label>
+                        <input type="text" class='form-control custom-input-xl'id='' placeholder="請填入發票起" value="">
+                    </div>
+                    <div class="input_group">發票結束</label>
+                        <input type="text" class='form-control custom-input-xl'id='' placeholder="請填入發票迄" value="">
+                    </div>
+                    
+                </div>
+            </div>
 
+        <div class="button_group">
+            <button class="cancel_bt" id="negative_bt-sm"><i class="fa-solid fa-xmark"></i>取消</button>
+            <button class="add_range_bt" id="positive_bt-sm"><i class="fa-solid fa-check"></i>確認</button>
+        </div>
+        
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js"></script>
     <script src="./JS/Matching-search.js"></script>
     <script src="./JS/header_sidebar.js"></script>
     <script src="./JS/Common-Functionality.js"></script>
