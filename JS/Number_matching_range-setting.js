@@ -5,57 +5,74 @@ $(document).ready(function(){
     updateSerialNumbers();
 
 
-    // table一鍵刪除功能
+    // // table一鍵刪除功能
+    // $('.table_all_delete_bt').click(function() {
+    //     // 先收集所有被选中的行
+    //     var selectedRows = $('.iq-card-body tr').filter(function() {
+    //         return $(this).find('input[type="checkbox"]').is(':checked');
+    //     });
+    
+    //     // 确认是否进行删除
+    //     if (selectedRows.length > 0 && confirm('確定要刪除已勾選的' + selectedRows.length + '項嗎？')) {
+    //         selectedRows.each(function() {
+    //             $(this).remove(); // 删除选中的行
+
+    
+    //         });
+           
+    
+    //         updateSerialNumbers(); // 更新序号
+    //         saveNewOrder(); // 假设你有这个函数来保存新的排序状态
+    //     }
+    // });
+    // // // 初始化序号
+   
     $('.table_all_delete_bt').click(function() {
-        // 先收集所有被选中的行
         var selectedRows = $('.iq-card-body tr').filter(function() {
             return $(this).find('input[type="checkbox"]').is(':checked');
         });
-    
-        // 确认是否进行删除
-        if (selectedRows.length > 0 && confirm('確定要刪除已勾選的' + selectedRows.length + '項嗎？')) {
-            selectedRows.each(function() {
-                $(this).remove(); // 删除选中的行
+
+        if (selectedRows.length > 0) {
+            $('#itemsCount').text(selectedRows.length); // 更新 Modal 中顯示的項目數
+            $('#all_delete-row_popup').modal('show'); // 顯示 Modal
+
+            $('.all_confirm_delete_bt').off('click').on('click', function() {
+                selectedRows.each(function() {
+                    $(this).remove(); // 刪除選中的行
+                    $('#all_delete-row_popup').modal('hide'); 
+                });
+                updateSerialNumbers(); // 更新序號
+                saveNewOrder(); // 儲存新的排序狀態
             });
+        } else {
+            $('#all_delete-row-confirmalert').modal('show'); 
+        }
+    });
+
+    function updateSerialNumbers() {
+        $('.iq-card-body tr').each(function(index) {
+            $(this).find('td:first').text(index + 1); // 更新每一行的第一個td（序號）
+        });
+    }
     
-            updateSerialNumbers(); // 更新序号
-            saveNewOrder(); // 假设你有这个函数来保存新的排序状态
-        }
-    });
-    // // 初始化序号
-   
-
+    function saveNewOrder() {
+        // 假設這是儲存新排序的功能
+    }
     // 绑定删除按钮点击事件
-    $('.table_delete_bt').click(function() {
+     $('.table_delete_bt').click(function() {
         var $row = $(this).closest('tr');
-        var siteName = $row.find('td').eq(3).text();  // 假设站点名称位于第四个td
+        var siteName = $row.find('td').eq(4).text(); // 假設站點名稱位於第四個td
+        $('#siteNameToDelete').text(siteName); // 將站點名稱設定到 Modal 中
+        $('#delete-row_popup').modal('show'); // 顯示 Modal
 
-        // 确认是否要删除行，包括站点名称
-        if (confirm("確定要删除這個站點：" + siteName + " 嗎？")) {
-            $row.remove(); // 删除当前行
-            updateSerialNumbers(); // 更新序号
-        }
+        $('.confirm_delete_bt').off('click').on('click', function() {
+            $row.remove(); // 刪除當前行
+            updateSerialNumbers(); // 更新序號
+            $('#delete-row_popup').modal('hide'); // 隱藏 Modal
+        });
     });
 
-    // 绑定上移按钮点击事件
-    $("tbody").on("click", ".move-up", function () {
-        var $row = $(this).closest("tr");
-        if ($row.index() > 0) {
-            $row.prev().before($row);
-            updateSerialNumbers(); // 更新序号
-            saveSortOrder($row, $row.prev()); // 保存排序
-        }
-    });
-
-    // 绑定下移按钮点击事件
-    $("tbody").on("click", ".move-down", function () {
-        var $row = $(this).closest("tr");
-        if ($row.index() < $("tbody tr").length - 1) {
-            $row.next().after($row);
-            updateSerialNumbers(); // 更新序号
-            saveSortOrder($row, $row.next()); // 保存排序
-        }
-    });
+    
 
     // 函数：更新所有行的序号
     function updateSerialNumbers() {
@@ -65,22 +82,25 @@ $(document).ready(function(){
     }
 
 
+    
+    // 移動行數功能move
+    $('td').has('.fa-bars').click(function() {
+        $('#move-row_popup').modal('show');  // 顯示 Modal
+        var currentRow = $(this).closest('tr');  // 獲取當前行
 
-    // 移動按鈕(順序調整，序列號不影響)
+        $('.confirm_move-insidecheck_bt').off('click').on('click', function() { // 綁定點擊事件到確認按鈕
+            var totalRows = $('#datatable tbody tr').length;
+            var desiredPosition = $('#desiredPosition').val();  // 從 input 獲取輸入的行號
 
-     // 綁定點擊事件到包含移動圖標的td元素
-     $('td').has('.fa-bars').click(function() {
-        var currentRow = $(this).closest('tr'); // 獲取當前行
-        var totalRows = $('#datatable tbody tr').length; // 獲取總行數
-        var desiredPosition = prompt("請輸入您希望將此行移動到的行號（1至" + totalRows + "）:");
-        
-        // 檢查輸入是否為有效數字且在範圍內
-        if(desiredPosition !== null && !isNaN(desiredPosition) && desiredPosition > 0 && desiredPosition <= totalRows) {
-            moveRow(currentRow, desiredPosition);
-            updateRowNumbers(); // 更新所有行的順序號碼
-        } else {
-            alert("輸入無效，請輸入1至" + totalRows + "之間的數字。");
-        }
+            // 檢查輸入是否為有效數字且在範圍內
+            if(desiredPosition && !isNaN(desiredPosition) && desiredPosition > 0 && desiredPosition <= totalRows) {
+                moveRow(currentRow, desiredPosition);
+                updateRowNumbers();  // 更新所有行的順序號碼
+            } else {
+                $('#move-row_alert').modal('show'); 
+            }
+            
+        });
     });
 
     // 函數：移動行到指定位置
@@ -89,18 +109,58 @@ $(document).ready(function(){
         var targetRow = $('#datatable tbody tr').eq(index); // 獲取目標行
 
         if (index < row.index()) {
-            targetRow.before(row); // 如果目標位置在當前行之前，將當前行移動到目標行之前
+            targetRow.before(row);  // 如果目標位置在當前行之前，將當前行移動到目標行之前
         } else {
-            targetRow.after(row); // 如果目標位置在當前行之後，將當前行移動到目標行之後
+            targetRow.after(row);  // 如果目標位置在當前行之後，將當前行移動到目標行之後
         }
     }
 
     // 函數：更新所有行的順序號碼
     function updateRowNumbers() {
         $('#datatable tbody tr').each(function(index) {
-            $(this).find('td:eq(1)').text(index + 1); // 更新每一行的第二個td（順序號）
+            $(this).find('td:eq(1)').text(index + 1);  // 更新每一行的第二個td（順序號）
         });
     }
+
+
+    
+
+
+    // // 移動按鈕(順序調整，序列號不影響)
+
+    //  // 綁定點擊事件到包含移動圖標的td元素
+    //  $('td').has('.fa-bars').click(function() {
+    //     var currentRow = $(this).closest('tr'); // 獲取當前行
+    //     var totalRows = $('#datatable tbody tr').length; // 獲取總行數
+    //     var desiredPosition = prompt("請輸入您希望將此行移動到的行號（1至" + totalRows + "）:");
+        
+    //     // 檢查輸入是否為有效數字且在範圍內
+    //     if(desiredPosition !== null && !isNaN(desiredPosition) && desiredPosition > 0 && desiredPosition <= totalRows) {
+    //         moveRow(currentRow, desiredPosition);
+    //         updateRowNumbers(); // 更新所有行的順序號碼
+    //     } else {
+    //         alert("輸入無效，請輸入1至" + totalRows + "之間的數字。");
+    //     }
+    // });
+
+    // // 函數：移動行到指定位置
+    // function moveRow(row, position) {
+    //     var index = position - 1; // 因為索引是從0開始的
+    //     var targetRow = $('#datatable tbody tr').eq(index); // 獲取目標行
+
+    //     if (index < row.index()) {
+    //         targetRow.before(row); // 如果目標位置在當前行之前，將當前行移動到目標行之前
+    //     } else {
+    //         targetRow.after(row); // 如果目標位置在當前行之後，將當前行移動到目標行之後
+    //     }
+    // }
+
+    // // 函數：更新所有行的順序號碼
+    // function updateRowNumbers() {
+    //     $('#datatable tbody tr').each(function(index) {
+    //         $(this).find('td:eq(1)').text(index + 1); // 更新每一行的第二個td（順序號）
+    //     });
+    // }
      
     
     

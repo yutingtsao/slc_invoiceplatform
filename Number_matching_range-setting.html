@@ -411,13 +411,143 @@
             </div>
 
             <div class="button_group">
-                <button class="cancel_bt" id="negative_bt-sm"><i class="fa-solid fa-xmark"></i>取消</button>
+                <button class="cancel_bt" id="negative_bt-sm" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i>取消</button>
                 <button class="edit_unit_bt" id="positive_bt-sm"><i class="fa-solid fa-check"></i>確認</button>
             </div>
         </div>
     </div>
 </div>
 
+
+<div class="modal fade" id="move-row_popup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered ">
+      <div class="modal-content shadow">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><title-large>操作-移動</title-large></h5>
+          
+        </div>
+        <div class="modal-body">
+          <div class="move-row_dialog">
+              <div class="confirm_setting">
+                <div class="confirm_message">
+                    <span>請輸入您希望將此行移動到的行號：</span><input type="number" class="number_input" id="desiredPosition" min="1" placeholder="行號">
+                    
+                </div>
+              </div> 
+                <div class="button_group">
+                    <button class="cancel_bt" id="negative_bt-sm" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i>取消</button>
+                    <button class="confirm_move-insidecheck_bt" id="positive_bt-sm"data-bs-dismiss="modal" aria-label="Close"><i class="fa-solidfa-check"></i>確認</button>
+                </div>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="move-row_alert" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered ">
+      <div class="modal-content shadow">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><title-large>操作-移動</title-large></h5>
+          
+        </div>
+        <div class="modal-body">
+          <div class="move-row_dialog">
+              <div class="confirm_setting">
+                <div class="confirm_message">
+                輸入無效，超過行數。請重新輸入移動行號。
+                </div>
+              </div>
+                <button class="confirm_matching_bt" id="positive_bt-sm"data-bs-dismiss="modal" aria-label="Close"><i class="fa-solidfa-check"></i>確認</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="delete-row_popup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered ">
+      <div class="modal-content shadow">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><title-large>操作-刪除</title-large></h5>
+          
+        </div>
+        <div class="modal-body">
+          <div class="delete-row_dialog">
+              <div class="confirm_setting">
+                <div class="confirm_message">
+                    確定要刪除這個站點：
+                    <span id="siteNameToDelete"></span> 嗎？
+                </div>
+              </div>
+              <div class="button_group">
+                <button class="cancel_bt" data-bs-dismiss="modal" id="negative_bt-sm"><i class="fa-solid fa-xmark"></i>取消</button>
+                <button class="confirm_delete_bt" id="positive_bt-sm"><i class="fa-solidfa-check"></i>確認</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="all_delete-row_popup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered ">
+      <div class="modal-content shadow">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><title-large>操作-刪除</title-large></h5>
+          
+        </div>
+        <div class="modal-body">
+          <div class="all_delete-row_dialog">
+              <div class="confirm_setting">
+                <div class="confirm_message">
+                    確定要刪除已勾選的 <span id="itemsCount"></span> 項嗎？
+                </div>
+              </div>
+              <div class="button_group">
+                <button class="cancel_bt" data-bs-dismiss="modal" id="negative_bt-sm"><i class="fa-solid fa-xmark"></i>取消</button>
+                <button class="all_confirm_delete_bt" id="positive_bt-sm"><i class="fa-solidfa-check"></i>確認</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="modal fade" id="all_delete-row-confirmalert" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered ">
+      <div class="modal-content shadow">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><title-large>操作-移動</title-large></h5>
+          
+        </div>
+        <div class="modal-body">
+          <div class="all_delete-row-confirm_dialog">
+              <div class="confirm_setting">
+                <div class="confirm_message">
+                    請選擇至少一項進行刪除。
+                </div>
+              </div>
+                <button class="confirm_matching_bt" id="positive_bt-sm"data-bs-dismiss="modal" aria-label="Close"><i class="fa-solidfa-check"></i>確認</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

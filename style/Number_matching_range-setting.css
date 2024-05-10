@@ -105,3 +105,45 @@ td.checkbox-cell input {
 }
 
 
+.move-row_dialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #745E48;
+    /* margin: 20px; */
+}
+
+.number_input{
+    width: 80px;
+    height: 40px;
+}
+
+.delete-row_dialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #745E48;
+    /* margin: 20px; */
+}
+
+
+.all_delete-row_dialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #745E48;
+    /* margin: 20px; */
+}
+
+.all_delete-row-confirm_dialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* align-content: center; */
+    color: #745E48;
+    /* margin: 20px; */
+}
