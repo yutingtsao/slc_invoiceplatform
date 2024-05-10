@@ -263,8 +263,8 @@ body{
 .button_group{
     display: flex;
     gap: 28px;
+    width: fit-content !important;
     margin-bottom: 20px;
-    width: fit-content;
 }
 
 
@@ -591,3 +591,5 @@ table tbody {
 table tfoot {
     --bs-table-bg:#EFE2CB !important;
 }
+
+
