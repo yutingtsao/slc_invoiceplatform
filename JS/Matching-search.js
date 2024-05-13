@@ -78,6 +78,74 @@ $('#datatable').on('click', '.add-range-row_bt', function() {
   
 });
 
+
+
+
+    // Popup dialog-資訊查看
+    $('.info-row_bt').click(function(){
+        $('.mask_info_check').css({right:"-434px"})
+        $('.info_check_dialog').animate({right:"0px"})
+        $('.mask_info_check').css('display','block')
+        
+    })
+    
+    $('#info_check-xmark').click(function(){
+        $('.info_check_dialog').animate({right: '-434px'},function() {
+            $('.mask_info_check').css('display', 'none'); // 关闭遮罩
+        
+            console.log('Reset complete'); // 确认重置
+         });
+     });
+    
+    $('.mask_info_check').click(function(){
+        $('.info_check_dialog').animate({right: '-434px'},function() {
+            $('.mask_info_check').css('display', 'none');// 关闭遮罩
+
+         });
+    })
+    
+    
+    $('.cancel_bt').click(function(){
+        $('.info_check_dialog').animate({right: '-434px'},function() {
+            $('.mask_info_check').css('display', 'none'); // 关闭遮罩
+            console.log('Reset complete'); // 确认重置
+        });
+    })
+    
+    $('.info_check_dialog').click(function(e){
+        e.stopPropagation()
+    })
+
+    updateProgressBar();
+
+    function updateProgressBar() {
+        let progress = 0;
+
+        // 检查上傳狀態
+        const uploadStatus = $('.dialog_wrapper-info_section:nth-child(1) .info_status').text();
+        const uploadTime = $('.dialog_wrapper-info_section:nth-child(1) .info_status_time').text().trim();
+        if (uploadStatus === '狀態:完成' && uploadTime !== '') {
+            progress = 33;
+        }
+
+        // 检查更新狀態
+        const updateStatus = $('.dialog_wrapper-info_section:nth-child(2) .info_status').text();
+        const updateTime = $('.dialog_wrapper-info_section:nth-child(2) .info_status_time').text().trim();
+        if (updateStatus === '狀態:完成' && updateTime !== '') {
+            progress = 66;
+        }
+
+        // 检查同步狀態
+        const syncStatus = $('.dialog_wrapper-info_section:nth-child(3) .info_status').text();
+        const syncTime = $('.dialog_wrapper-info_section:nth-child(3) .info_status_time').text().trim();
+        if (syncStatus === '狀態:完成' && syncTime !== '') {
+            progress = 100;
+        }
+
+        // 更新进度条
+        $('.progress-bar').css('width', progress + '%').text(progress + '%');
+    }
+
 })
 
 

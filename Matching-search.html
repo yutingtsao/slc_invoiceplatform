@@ -479,11 +479,57 @@
 
 
 
+<!-- Information dialog -->
+<div class="mask_info_check">
+    <div class="info_check_dialog">
+        <i id="info_check-xmark"><i class="fa-solid fa-xmark xmark_icon" style="color: #745e48;"></i></i>
+        <div class="dialog_wrapper-info">
+            <p><title-large>發票流程</title-large></p>
+            <div class="dialog_wrapper-info-m">
+                <div class="dialog_wrapper-info-s">
+                    <div class="percentage_title">
+                        <span>40%</span>
+                        <span class="percentage_subtitle">Processing...</span>
+                    </div>
+                    <div class="progress" style="height: 24px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">40%</div>
+                    </div>
+                </div>
+                <div class="dialog_wrapper-info-xs">
+                    <div class="dialog_wrapper-info_section">
+                        <label for="" class="info_status_title">上傳狀態</label>
+                        <label for="" class="info_status">狀態:完成</label>
+                        <p class="info_status_time">2023/12/25 14:00:02</p>
+                    </div>
+                    <div class="dialog_wrapper-info_section">
+                        <label for="" class="info_status_title">更新狀態</label>
+                        <label for="" class="info_status">狀態:處理中</label>
+                        <p class="info_status_time"></p>
+                    </div>
+                    <div class="dialog_wrapper-info_section">
+                        <label for="" class="info_status_title">同步狀態</label>
+                        <label for="" class="info_status">狀態:未處理</label>
+                        <p class="info_status_time"></p>
+                    </div>
+                </div>
+                <div class="button_group">
+                    <button class="cancel_bt" id="negative_bt-m"><i class="fa-solid fa-xmark"></i>關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="./JS/Matching-search.js"></script>
     <script src="./JS/header_sidebar.js"></script>
     <script src="./JS/Common-Functionality.js"></script>
