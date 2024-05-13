@@ -51,6 +51,8 @@ $('.single_add_range_dialog').click(function(e){
     e.stopPropagation()
 })
 
+
+// Popup dialog-新增個別區間功能-表格資料帶入
 $('#datatable').on('click', '.add-range-row_bt', function() {
     // 获取当前行的数据
     var currentRow = $(this).closest('tr');
