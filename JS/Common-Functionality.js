@@ -69,6 +69,90 @@ $(document).ready(function(){
     }
     
 
+
+    // Matching-search-selector_matching_search-popup
+     // 年份範圍選擇器，自動選擇+-10year
+    // 1.獲取當前年份：
+    var currentYear=new Date().getFullYear();
+    // 2.設定年份範圍：
+    var range=10;
+    // 3.添加選項到選擇器：
+    // 計算year的值，這是currentYear加上i。
+    // 使用jQuery的$('<option>')建立一個選項，並設定val()為年份、text()為年份文字。
+    // 使用$('#year-select').append($option)將選項添加到選擇器。
+    for (var y= -range; y<= range; y++){
+        var year = currentYear+y;
+        var $option = $('<option>').val(year).text(year);
+        $('.single-year-select').append($option);
+    }
+    // 4.設定預設選擇值：
+    // 這行程式碼將選擇器的預設值設定為當前年份。
+    $('.single-year-select').val(currentYear);
+
+
+    // 月份範圍選擇器，自動顯示12個月分r
+    // 1.選擇器初始化：
+    var $monthSelect = $('.single-month-select')
+    //2.清空現有的選項，保留 "請選擇月份"
+    $monthSelect.find('option:not(:first)').remove();
+    // 3.添加12個月份
+    var monthNames = [
+        "1月", "2月", "3月", "4月", "5月", "6月",
+        "7月", "8月", "9月", "10月", "11月", "12月"
+    ];
+    // 4.添加月份選項：
+    // 這個循環遍歷月份名稱，並為每個月份創建一個選項：
+    // 使用$('<option>')生成選項，設定值val()為月份的序號（1至12），顯示文字text()為月份名稱。
+    // 使用append()將選項添加到選擇器。    
+    for (var m = 0; m < monthNames.length; m++){
+        var $option = $('<option>').val(m+1).text(monthNames[m]);
+        $monthSelect.append($option);
+    }
+
+
+    
+    // Matching-search-selector_Add Single-Range Function
+     // 年份範圍選擇器，自動選擇+-10year
+    // 1.獲取當前年份：
+    var currentYear=new Date().getFullYear();
+    // 2.設定年份範圍：
+    var range=10;
+    // 3.添加選項到選擇器：
+    // 計算year的值，這是currentYear加上i。
+    // 使用jQuery的$('<option>')建立一個選項，並設定val()為年份、text()為年份文字。
+    // 使用$('#year-select').append($option)將選項添加到選擇器。
+    for (var y= -range; y<= range; y++){
+        var year = currentYear+y;
+        var $option = $('<option>').val(year).text(year);
+        $('.single-year-result').append($option);
+    }
+    // 4.設定預設選擇值：
+    // 這行程式碼將選擇器的預設值設定為當前年份。
+    $('.single-year-result').val(currentYear);
+
+
+    // 月份範圍選擇器，自動顯示12個月分r
+    // 1.選擇器初始化：
+    var $monthSelect = $('.single-month-result')
+    //2.清空現有的選項，保留 "請選擇月份"
+    $monthSelect.find('option:not(:first)').remove();
+    // 3.添加12個月份
+    var monthNames = [
+        "1月", "2月", "3月", "4月", "5月", "6月",
+        "7月", "8月", "9月", "10月", "11月", "12月"
+    ];
+    // 4.添加月份選項：
+    // 這個循環遍歷月份名稱，並為每個月份創建一個選項：
+    // 使用$('<option>')生成選項，設定值val()為月份的序號（1至12），顯示文字text()為月份名稱。
+    // 使用append()將選項添加到選擇器。    
+    for (var m = 0; m < monthNames.length; m++){
+        var $option = $('<option>').val(m+1).text(monthNames[m]);
+        $monthSelect.append($option);
+    }
+
+
+
+
     // Sidebar-popup導入頁面
     // 查詢按鈕的點擊事件
     $('.fueling_invoice-popup-search_bt').click(function() {
@@ -128,8 +212,55 @@ $(document).ready(function(){
     });
 
     $('.matching_search-search_bt').click(function() {
-        window.location.href = "../Matching-search.html"
+        var selectedYear = $('.single-year-select').val();
+        var selectedMonth = $('.single-month-select').val();
+
+        // 储存到localStorage
+        localStorage.setItem('selectedYear', selectedYear);
+        localStorage.setItem('selectedMonth', selectedMonth);
+
+        // 导航到matching-search.html
+        window.location.href = "../Matching-search.html";
     });
+
+    // Add Range Function 
+    // 使用事件委托绑定点击事件
+    $(document).on('click', '.add_range_bt', function() {
+        // 从localStorage获取年份和月份
+        var year = localStorage.getItem('selectedYear');
+        var month = localStorage.getItem('selectedMonth');
+
+        // 确保下拉选择器已经在DOM中
+        if ($('.single-year-result').length > 0 && $('.single-month-result').length > 0) {
+            // 设置到对应的选择器中并禁用更改
+            $('.single-year-result').val(year).prop('disabled', true);
+            $('.single-month-result').val(month).prop('disabled', true);
+        } else {
+            // 如果没有找到选择器，可以在这里输出一些错误信息或进行其他处理
+            console.log("Cannot find selectors in the DOM.");
+        }
+    });
+
+    // Add Single-Range Function
+    // 使用事件委托绑定点击事件
+    $(document).on('click', '.add-range-row_bt', function() {
+        // 从localStorage获取年份和月份
+        var year = localStorage.getItem('selectedYear');
+        var month = localStorage.getItem('selectedMonth');
+
+        // 确保下拉选择器已经在DOM中
+        if ($('.single-year-result').length > 0 && $('.single-month-result').length > 0) {
+            // 设置到对应的选择器中并禁用更改
+            $('.single-year-result').val(year).prop('disabled', true);
+            $('.single-month-result').val(month).prop('disabled', true);
+        } else {
+            // 如果没有找到选择器，可以在这里输出一些错误信息或进行其他处理
+            console.log("Cannot find selectors in the DOM.");
+        }
+    });
+
+     
+   
 
 
 // Popup dialog-新增區間單位(首頁&配號區間設定)
@@ -211,44 +342,7 @@ $('.add_range_dialog').click(function(e){
     e.stopPropagation()
 })
 
-// Popup dialog-新增個別區間功能(首頁&配號查詢頁面)
-$('.add-range-row_bt').click(function(){
-    $('.mask_single_range_unit').css({right:"-434px"})
-    $('.single_add_range_dialog').animate({right:"0px"})
-    $('.mask_single_range_unit').css('display','block')
-    
-})
 
-$('#single_add_range-xmark').click(function(){
-    $('.single_add_range_dialog').animate({right: '-434px'},function() {
-        $('.mask_single_range_unit').css('display', 'none'); // 关闭遮罩
-        $('.single_add_range_dialog input').val(''); // 清空所有输入框
-        $('.single_add_range_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
-        console.log('Reset complete'); // 确认重置
-     });
- });
-
-$('.mask_single_range_unit').click(function(){
-    $('.single_add_range_dialog').animate({right: '-434px'},function() {
-        $('.mask_single_range_unit').css('display', 'none');// 关闭遮罩
-        $('.single_add_range_dialog input').val(''); // 清空所有输入框
-        $('.single_add_range_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
-     });
-})
-
-
-$('.cancel_bt').click(function(){
-    $('.single_add_range_dialog').animate({right: '-434px'},function() {
-        $('.mask_single_range_unit').css('display', 'none'); // 关闭遮罩
-        $('.single_add_range_dialog input').val(''); // 清空所有输入框
-        $('.single_add_range_dialog select').prop('selectedIndex', "0"); // 重置下拉选择器
-        console.log('Reset complete'); // 确认重置
-    });
-})
-
-$('.single_add_range_dialog').click(function(e){
-    e.stopPropagation()
-})
 
 
 
