@@ -81,6 +81,7 @@ $('#datatable').on('click', '.add-range-row_bt', function() {
 
 
 
+
     // Popup dialog-資訊查看
     $('.info-row_bt').click(function(){
         $('.mask_info_check').css({right:"-434px"})
@@ -116,36 +117,66 @@ $('#datatable').on('click', '.add-range-row_bt', function() {
         e.stopPropagation()
     })
 
+
+
+    // Popup dialog-資訊查看-進度條與狀態顯示
     updateProgressBar();
 
     function updateProgressBar() {
         let progress = 0;
+        let statusText = '';
 
-        // 检查上傳狀態
-        const uploadStatus = $('.dialog_wrapper-info_section:nth-child(1) .info_status').text();
-        const uploadTime = $('.dialog_wrapper-info_section:nth-child(1) .info_status_time').text().trim();
+        // 定义状态元素
+        const uploadSection = $('.dialog_wrapper-info_section:contains("上傳狀態")');
+        const updateSection = $('.dialog_wrapper-info_section:contains("更新狀態")');
+        const syncSection = $('.dialog_wrapper-info_section:contains("同步狀態")');
+
+        const uploadStatus = uploadSection.find('.info_status').text().trim();
+        const uploadTime = uploadSection.find('.info_status_time').text().trim();
+        const updateStatus = updateSection.find('.info_status').text().trim();
+        const updateTime = updateSection.find('.info_status_time').text().trim();
+        const syncStatus = syncSection.find('.info_status').text().trim();
+        const syncTime = syncSection.find('.info_status_time').text().trim();
+
+        // 更新上傳狀態
         if (uploadStatus === '狀態:完成' && uploadTime !== '') {
             progress = 33;
+            statusText = 'Processing...';
+        } else if (uploadStatus === '狀態:未處理') {
+            uploadSection.find('.info_status').text('狀態:處理中');
+            uploadSection.find('.info_status_time').text('');
         }
 
-        // 检查更新狀態
-        const updateStatus = $('.dialog_wrapper-info_section:nth-child(2) .info_status').text();
-        const updateTime = $('.dialog_wrapper-info_section:nth-child(2) .info_status_time').text().trim();
-        if (updateStatus === '狀態:完成' && updateTime !== '') {
-            progress = 66;
+        // 更新更新狀態
+        if (uploadStatus === '狀態:完成' && uploadTime !== '') {
+            if (updateStatus === '狀態:完成' && updateTime !== '') {
+                progress = 66;
+                statusText = 'Updating...';
+            } else if (updateStatus === '狀態:未處理') {
+                updateSection.find('.info_status').text('狀態:處理中');
+                updateSection.find('.info_status_time').text('');
+            }
         }
 
-        // 检查同步狀態
-        const syncStatus = $('.dialog_wrapper-info_section:nth-child(3) .info_status').text();
-        const syncTime = $('.dialog_wrapper-info_section:nth-child(3) .info_status_time').text().trim();
-        if (syncStatus === '狀態:完成' && syncTime !== '') {
-            progress = 100;
+        // 更新同步狀態
+        if (uploadStatus === '狀態:完成' && uploadTime !== '' &&
+            updateStatus === '狀態:完成' && updateTime !== '') {
+            if (syncStatus === '狀態:完成' && syncTime !== '') {
+                progress = 100;
+                statusText = 'Completed';
+            } else if (syncStatus === '狀態:未處理') {
+                syncSection.find('.info_status').text('狀態:處理中');
+                syncSection.find('.info_status_time').text('');
+            }
         }
 
         // 更新进度条
         $('.progress-bar').css('width', progress + '%').text(progress + '%');
-    }
 
+        // 更新百分比标题
+        $('.percentage_title span:first-child').text(progress + '%');
+        $('.percentage_title .percentage_subtitle').text(statusText);
+    }
 })
 
 

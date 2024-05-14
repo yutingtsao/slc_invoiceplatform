@@ -21,6 +21,9 @@ $(document).ready(function(){
         event.stopPropagation();
     })
     
+    $('.dropdown_block2').click(function(event){
+        event.stopPropagation();
+    })
 
     $('#fueling_invoice-popup').on('hidden.bs.modal',function(){
         // 恢复所有受影响的 <span> 元素到它们的原始颜色

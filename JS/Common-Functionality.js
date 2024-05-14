@@ -69,6 +69,8 @@ $(document).ready(function(){
     }
     
 
+    
+
 
     // Matching-search-selector_matching_search-popup
      // 年份範圍選擇器，自動選擇+-10year
@@ -110,8 +112,47 @@ $(document).ready(function(){
     }
 
 
+    // Matching-search-insidepage
+     // 年份範圍選擇器，自動選擇+-10year
+    // 1.獲取當前年份：
+    var currentYear=new Date().getFullYear();
+    // 2.設定年份範圍：
+    var range=10;
+    // 3.添加選項到選擇器：
+    // 計算year的值，這是currentYear加上i。
+    // 使用jQuery的$('<option>')建立一個選項，並設定val()為年份、text()為年份文字。
+    // 使用$('#year-select').append($option)將選項添加到選擇器。
+    for (var y= -range; y<= range; y++){
+        var year = currentYear+y;
+        var $option = $('<option>').val(year).text(year);
+        $('.matching-search_year-select').append($option);
+    }
+    // 4.設定預設選擇值：
+    // 這行程式碼將選擇器的預設值設定為當前年份。
+    $('.matching-search_year-select').val(currentYear);
+
+
+    // 月份範圍選擇器，自動顯示12個月分r
+    // 1.選擇器初始化：
+    var $monthSelect = $('.matching-search_month-select')
+    //2.清空現有的選項，保留 "請選擇月份"
+    $monthSelect.find('option:not(:first)').remove();
+    // 3.添加12個月份
+    var monthNames = [
+        "1月", "2月", "3月", "4月", "5月", "6月",
+        "7月", "8月", "9月", "10月", "11月", "12月"
+    ];
+    // 4.添加月份選項：
+    // 這個循環遍歷月份名稱，並為每個月份創建一個選項：
+    // 使用$('<option>')生成選項，設定值val()為月份的序號（1至12），顯示文字text()為月份名稱。
+    // 使用append()將選項添加到選擇器。    
+    for (var m = 0; m < monthNames.length; m++){
+        var $option = $('<option>').val(m+1).text(monthNames[m]);
+        $monthSelect.append($option);
+    }
+
     
-    // Matching-search-selector_Add Single-Range Function
+    // Matching-search-selector_Add All%=&Single-Range Function
      // 年份範圍選擇器，自動選擇+-10year
     // 1.獲取當前年份：
     var currentYear=new Date().getFullYear();
@@ -151,7 +192,83 @@ $(document).ready(function(){
     }
 
 
+     // Matching-function-selector-popup
+     // 年份範圍選擇器，自動選擇+-10year
+    // 1.獲取當前年份：
+    var currentYear=new Date().getFullYear();
+    // 2.設定年份範圍：
+    var range=10;
+    // 3.添加選項到選擇器：
+    // 計算year的值，這是currentYear加上i。
+    // 使用jQuery的$('<option>')建立一個選項，並設定val()為年份、text()為年份文字。
+    // 使用$('#year-select').append($option)將選項添加到選擇器。
+    for (var y= -range; y<= range; y++){
+        var year = currentYear+y;
+        var $option = $('<option>').val(year).text(year);
+        $('.matching-function_year-select').append($option);
+    }
+    // 4.設定預設選擇值：
+    // 這行程式碼將選擇器的預設值設定為當前年份。
+    $('.matching-function_year-select').val(currentYear);
 
+
+    // 月份範圍選擇器，自動顯示12個月分r
+    // 1.選擇器初始化：
+    var $monthSelect = $('.matching-function_month-select')
+    //2.清空現有的選項，保留 "請選擇月份"
+    $monthSelect.find('option:not(:first)').remove();
+    // 3.添加12個月份
+    var monthNames = [
+        "1月", "2月", "3月", "4月", "5月", "6月",
+        "7月", "8月", "9月", "10月", "11月", "12月"
+    ];
+    // 4.添加月份選項：
+    // 這個循環遍歷月份名稱，並為每個月份創建一個選項：
+    // 使用$('<option>')生成選項，設定值val()為月份的序號（1至12），顯示文字text()為月份名稱。
+    // 使用append()將選項添加到選擇器。    
+    for (var m = 0; m < monthNames.length; m++){
+        var $option = $('<option>').val(m+1).text(monthNames[m]);
+        $monthSelect.append($option);
+    }
+
+       // Matching-function-insidepage
+     // 年份範圍選擇器，自動選擇+-10year
+    // 1.獲取當前年份：
+    var currentYear=new Date().getFullYear();
+    // 2.設定年份範圍：
+    var range=10;
+    // 3.添加選項到選擇器：
+    // 計算year的值，這是currentYear加上i。
+    // 使用jQuery的$('<option>')建立一個選項，並設定val()為年份、text()為年份文字。
+    // 使用$('#year-select').append($option)將選項添加到選擇器。
+    for (var y= -range; y<= range; y++){
+        var year = currentYear+y;
+        var $option = $('<option>').val(year).text(year);
+        $('.matching-function_year-result').append($option);
+    }
+    // 4.設定預設選擇值：
+    // 這行程式碼將選擇器的預設值設定為當前年份。
+    $('.matching-function_year-result').val(currentYear);
+
+
+    // 月份範圍選擇器，自動顯示12個月分r
+    // 1.選擇器初始化：
+    var $monthSelect = $('.matching-function_month-result')
+    //2.清空現有的選項，保留 "請選擇月份"
+    $monthSelect.find('option:not(:first)').remove();
+    // 3.添加12個月份
+    var monthNames = [
+        "1月", "2月", "3月", "4月", "5月", "6月",
+        "7月", "8月", "9月", "10月", "11月", "12月"
+    ];
+    // 4.添加月份選項：
+    // 這個循環遍歷月份名稱，並為每個月份創建一個選項：
+    // 使用$('<option>')生成選項，設定值val()為月份的序號（1至12），顯示文字text()為月份名稱。
+    // 使用append()將選項添加到選擇器。    
+    for (var m = 0; m < monthNames.length; m++){
+        var $option = $('<option>').val(m+1).text(monthNames[m]);
+        $monthSelect.append($option);
+    }
 
     // Sidebar-popup導入頁面
     // 查詢按鈕的點擊事件
@@ -207,43 +324,161 @@ $(document).ready(function(){
         window.location.href = "../Invoice-shipping.html"
     });
 
-    $('.matching_function-search_bt').click(function() {
-        window.location.href = "../Matching-function.html"
-    });
+    // // 在点击查询按钮时，保存选择的年份和月份到localStorage，并跳转到新的页面
+ 
+    // $('.matching_function-search_bt').click(function() {
+    //     var selectedYear = $('.matching-function_year-select').val();
+    //     var selectedMonth = $('.matching-function_month-select').val();
 
-    $('.matching_search-search_bt').click(function() {
-        var selectedYear = $('.single-year-select').val();
-        var selectedMonth = $('.single-month-select').val();
+    //     // 储存到localStorage
+    //     localStorage.setItem('selectedYear', selectedYear);
+    //     localStorage.setItem('selectedMonth', selectedMonth);
+
+    //     // 导航到Matching-function.html
+    //     window.location.href = "../Matching-function.html";
+    // });
+
+    // // 在页面加载时，检查是否在Matching-function.html页面，并加载数据
+    // if (window.location.pathname.endsWith('Matching-function.html')) {
+    //     // 从localStorage获取年份和月份
+    //     var year = localStorage.getItem('selectedYear');
+    //     var month = localStorage.getItem('selectedMonth');
+    
+    //     // 确保下拉选择器已经在DOM中
+    //     if ($('.matching-function_year-result').length > 0 && $('.matching-function_month-result').length > 0) {
+    //         // 设置到对应的选择器中
+    //         $('.matching-function_year-result').val(year);
+    //         $('.matching-function_month-result').val(month);
+    //     } else {
+    //         // 如果没有找到选择器，可以在这里输出一些错误信息或进行其他处理
+    //         console.log("Cannot find selectors in the DOM.");
+    //     }
+    // }
+    
+    
+
+    // $('.matching_search-search_bt').click(function() {
+    //     var selectedYear = $('.single-year-select').val();
+    //     var selectedMonth = $('.single-month-select').val();
+
+    //     // 储存到localStorage
+    //     localStorage.setItem('selectedYear', selectedYear);
+    //     localStorage.setItem('selectedMonth', selectedMonth);
+
+    //     // 导航到matching-search.html
+    //     window.location.href = "../Matching-search.html";
+
+        
+    // });
+
+    // // Add Range Function 
+    // // 使用事件委托绑定点击事件
+    // $(document).on('click', '.add_range_bt', function() {
+    //     // 从localStorage获取年份和月份
+    //     var year = localStorage.getItem('selectedYear');
+    //     var month = localStorage.getItem('selectedMonth');
+
+    //     // 确保下拉选择器已经在DOM中
+    //     if ($('.single-year-result').length > 0 && $('.single-month-result').length > 0) {
+    //         // 设置到对应的选择器中并禁用更改
+    //         $('.single-year-result').val(year).prop('disabled', true);
+    //         $('.single-month-result').val(month).prop('disabled', true);
+    //     } else {
+    //         // 如果没有找到选择器，可以在这里输出一些错误信息或进行其他处理
+    //         console.log("Cannot find selectors in the DOM.");
+    //     }
+    // });
+
+    function saveYearMonthToLocalStorage(selectorYear, selectorMonth, nextPage) {
+        var selectedYear = $(selectorYear).val();
+        var selectedMonth = $(selectorMonth).val();
 
         // 储存到localStorage
         localStorage.setItem('selectedYear', selectedYear);
         localStorage.setItem('selectedMonth', selectedMonth);
 
-        // 导航到matching-search.html
-        window.location.href = "../Matching-search.html";
-    });
+        // 导航到指定的页面
+        window.location.href = nextPage;
+    }
 
-    // Add Range Function 
-    // 使用事件委托绑定点击事件
-    $(document).on('click', '.add_range_bt', function() {
+    function loadYearMonthFromLocalStorage(selectorYear, selectorMonth) {
         // 从localStorage获取年份和月份
         var year = localStorage.getItem('selectedYear');
         var month = localStorage.getItem('selectedMonth');
-
+    
         // 确保下拉选择器已经在DOM中
-        if ($('.single-year-result').length > 0 && $('.single-month-result').length > 0) {
-            // 设置到对应的选择器中并禁用更改
-            $('.single-year-result').val(year).prop('disabled', true);
-            $('.single-month-result').val(month).prop('disabled', true);
+        if ($(selectorYear).length > 0 && $(selectorMonth).length > 0) {
+            // 设置到对应的选择器中
+            $(selectorYear).val(year);
+            $(selectorMonth).val(month);
         } else {
             // 如果没有找到选择器，可以在这里输出一些错误信息或进行其他处理
             console.log("Cannot find selectors in the DOM.");
         }
-    });
+    }
+
+    function syncSelectors(selectorYearSrc, selectorMonthSrc, selectorYearDest, selectorMonthDest) {
+        $(selectorYearSrc).change(function() {
+            var year = $(this).val();
+            $(selectorYearDest).val(year);
+        });
+
+        $(selectorMonthSrc).change(function() {
+            var month = $(this).val();
+            $(selectorMonthDest).val(month);
+        });
+    }
+
+    function initSaveYearMonthButtons() {
+        $('.matching_function-search_bt').click(function() {
+            saveYearMonthToLocalStorage('.matching-function_year-select', '.matching-function_month-select', '../Matching-function.html');
+        });
+
+        $('.matching_search-search_bt').click(function() {
+            saveYearMonthToLocalStorage('.single-year-select', '.single-month-select', '../Matching-search.html');
+        });
+    }
+
+    function initLoadYearMonth() {
+        if (window.location.pathname.endsWith('Matching-function.html')) {
+            loadYearMonthFromLocalStorage('.matching-function_year-result', '.matching-function_month-result');
+        } else if (window.location.pathname.endsWith('matching-search.html')) {
+            loadYearMonthFromLocalStorage('.single-year-result', '.single-month-result');
+            syncSelectors('.matching-search_year-select', '.matching-search_month-select', '.single-year-result', '.single-month-result');
+
+        } else if (window.location.pathname.endsWith('Matching-search.html')) {
+            loadYearMonthFromLocalStorage('.matching-search_year-select', '.matching-search_month-select');
+            syncSelectors('.matching-search_year-select', '.matching-search_month-select', '.single-year-result', '.single-month-result');
+        }
+    }
+
+    function initAddRangeButton() {
+        // 使用事件委托绑定点击事件
+
+        $(document).on('click', '.add_range_bt', function() {
+            loadYearMonthFromLocalStorage('.single-year-result', '.single-month-result','.matching-function_year-result','.matching-function_month-result');
+        });
+    }
+
+      // 在点击查询按钮时同步更新年份和月份选择器
+      function initSyncYearMonthOnSearch() {
+        $('.search_bt_function').click(function() {
+            var year = $('.matching-search_year-select').val();
+            var month = $('.matching-search_month-select').val();
+            $('.single-year-result').val(year);
+            $('.single-month-result').val(month);
+        });
+    }
+
+    // 初始化所有功能
+    initSaveYearMonthButtons();
+    initLoadYearMonth();
+    initAddRangeButton();
+    initSyncYearMonthOnSearch();
 
     // Add Single-Range Function
     // 使用事件委托绑定点击事件
-    $(document).on('click', '.add-range-row_bt', function() {
+    $(document).on('click', '.add_range_bt, .add-range-row_bt', function() {
         // 从localStorage获取年份和月份
         var year = localStorage.getItem('selectedYear');
         var month = localStorage.getItem('selectedMonth');
@@ -259,8 +494,32 @@ $(document).ready(function(){
         }
     });
 
-     
+    //   // 初始化所有功能
+    //   initSaveYearMonthButtons();
+    //   initLoadYearMonth();
+    //   initAddRangeButton();
    
+    // // Add Single-Range Function
+    // // 使用事件委托绑定点击事件
+    // $(document).on('click', '.add_range_bt','.add-range-row_bt', function() {
+    //     // 从localStorage获取年份和月份
+    //     var year = localStorage.getItem('selectedYear');
+    //     var month = localStorage.getItem('selectedMonth');
+
+    //     // 确保下拉选择器已经在DOM中
+    //     if ($('.single-year-result').length > 0 && $('.single-month-result').length > 0) {
+    //         // 设置到对应的选择器中并禁用更改
+    //         $('.single-year-result').val(year).prop('disabled', true);
+    //         $('.single-month-result').val(month).prop('disabled', true);
+    //     } else {
+    //         // 如果没有找到选择器，可以在这里输出一些错误信息或进行其他处理
+    //         console.log("Cannot find selectors in the DOM.");
+    //     }
+    // });
+
+     
+  
+
 
 
 // Popup dialog-新增區間單位(首頁&配號區間設定)
