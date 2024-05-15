@@ -67,7 +67,7 @@ $(document).ready(function(){
         initializeYearMonthSelectors('.invoice-shipping_year-select', '.invoice-shipping_month-select');
         initializeYearMonthSelectors('.invoice-shipping_year-result', '.invoice-shipping_month-result');
         initializeYearMonthSelectors('.matching-search_year-select', '.matching-search_month-select');
-        initializeYearMonthSelectors('.matching-search_year-inside-select', '.matching-search_month-inside-select');
+        initializeYearMonthSelectors('.matching-search_year-inside-result', '.matching-search_month-inside-result');
         initializeYearMonthSelectors('.matching-search_year-result', '.matching-search_month-result');
         initializeYearMonthSelectors('.matching-function_year-select', '.matching-function_month-select');
         initializeYearMonthSelectors('.matching-function_year-result', '.matching-function_month-result');
@@ -98,7 +98,7 @@ $(document).ready(function(){
     //     initializeYearMonthSelectors('.transport-sap_year-select', '.transport-sap_month-select');
     //     initializeYearMonthSelectors('.transport-sap_year-result', '.transport-sap_month-result');
     //     initializeYearMonthSelectors('.matching-search_year-select', '.matching-search_month-select');
-    //     initializeYearMonthSelectors('.matching-search_year-inside-select', '.matching-search_month-inside-select');
+    //     initializeYearMonthSelectors('.matching-search_year-inside-result', '.matching-search_month-inside-result');
     //     initializeYearMonthSelectors('.matching-search_year-result', '.matching-search_month-result');
     //     initializeYearMonthSelectors('.matching-function_year-select', '.matching-function_month-select');
     //     initializeYearMonthSelectors('.matching-function_year-result', '.matching-function_month-result');
@@ -185,11 +185,11 @@ $(document).ready(function(){
             loadYearMonthFromLocalStorage('.matching-function_year-result', '.matching-function_month-result');
         } else if (window.location.pathname.endsWith('matching-search.html')) {
             loadYearMonthFromLocalStorage('.matching-search_year-result', '.matching-search_month-result');
-            syncSelectors('.matching-search_year-inside-select', '.matching-search_month-inside-select','.matching-search_year-result', '.matching-search_month-result');
+            syncSelectors('.matching-search_year-inside-result', '.matching-search_month-inside-result','.matching-search_year-result', '.matching-search_month-result');
 
         } else if (window.location.pathname.endsWith('Matching-search.html')) {
-            loadYearMonthFromLocalStorage('.matching-search_year-inside-select', '.matching-search_month-inside-select');
-            syncSelectors('.matching-search_year-inside-select','.matching-search_month-inside-select','.matching-search_year-select', '.matching-search_month-select','.matching-search_year-result', '.matching-search_month-result');
+            loadYearMonthFromLocalStorage('.matching-search_year-inside-result', '.matching-search_month-inside-result');
+            syncSelectors('.matching-search_year-inside-result','.matching-search_month-inside-result','.matching-search_year-select', '.matching-search_month-select','.matching-search_year-result', '.matching-search_month-result');
             
         }else if (window.location.pathname.endsWith('Invoice-fueling_invoice.html')) {
             loadYearMonthFromLocalStorage('.invoice-fueling_year-result', '.invoice-fueling_month-result');
@@ -224,8 +224,8 @@ $(document).ready(function(){
       // 在点击查询按钮时同步更新年份和月份选择器
       function initSyncYearMonthOnSearch() {
         $('.search_bt_function').click(function() {
-            var year = $('.matching-search_year-inside-select').val();
-            var month = $('.matching-search_month-inside-select').val();
+            var year = $('.matching-search_year-inside-result').val();
+            var month = $('.matching-search_month-inside-result').val();
             console.log('Year: ' + year + ', Month: ' + month);  // Debug: 输出捕获的值
             $('.matching-search_year-select').val(year);
             $('.matching-search_month-select').val(month);
@@ -239,8 +239,8 @@ $(document).ready(function(){
     // 使用事件委托绑定点击事件
     $(document).on('click', '.add-range-row_bt', function() {
         // 从内页选择器获取年份和月份
-        var year = $('.matching-search_year-inside-select').val();
-        var month = $('.matching-search_month-inside-select').val();
+        var year = $('.matching-search_year-inside-result').val();
+        var month = $('.matching-search_month-inside-result').val();
     
         // 确保结果选择器已经在DOM中
         if ($('.matching-search_year-result').length > 0 && $('.matching-search_month-result').length > 0) {
@@ -254,8 +254,8 @@ $(document).ready(function(){
     
     $(document).on('click', '.add_range_bt', function() {
         // 从内页选择器获取年份和月份
-        var year = $('.matching-search_year-inside-select').val();
-        var month = $('.matching-search_month-inside-select').val();
+        var year = $('.matching-search_year-inside-result').val();
+        var month = $('.matching-search_month-inside-result').val();
     
         // 确保结果选择器已经在DOM中
         if ($('.matching-search_year-result').length > 0 && $('.matching-search_month-result').length > 0) {
@@ -439,22 +439,40 @@ $('.edit_unit_dialog').click(function(e){
 
 
 
-    // 清空按鈕的點擊事件
-    $('.eraser_bt').click(function() {
-        // 清空選擇器的值
-        $('.year-select').val('');
-        $('.month-select').val('');
-        $('.change-status').val('');
-        $('.invoice-status').val('');
-        $('.error-status').val('');
-        $('.bp-input').val('');
-        $('.station-name').val('');
-        $('.sync-status').val('');
-        $('.upload-status').val('');
-        $('.methods').val('');
-        $('.type').val('');
-    });
-   
+// 清空按钮的点击事件
+$('.eraser_bt').click(function() {
+    // 清空选择器的值
+    $('.year-select').val('');
+    $('.month-select').val('');
+    $('.invoice-fueling_year-result').val('');
+    $('.invoice-fueling_month-result').val('');
+    $('.invoice-fueling-pos_year-result').val('');
+    $('.invoice-fueling-pos_month-result').val('');
+    $('.invoice-fueling-pos2_year-result').val('');
+    $('.invoice-fueling-pos2_month-result').val('');
+    $('.transport-sap_year-result').val('');
+    $('.transport-sap_month-result').val('');
+    $('.invoice-shipping_year-result').val('');
+    $('.invoice-shipping_month-result').val('');
+    $('.matching-search_year-result').val('');
+    $('.matching-search_month-result').val('');
+    $('.matching-search_year-inside-result').val('');
+    $('.matching-search_month-inside-result').val('');
+    $('.matching-function_year-result').val('');
+    $('.matching-function_month-result').val('');
+
+    // 清空其他选择器的值
+    $('.change-status').val('');
+    $('.invoice-status').val('');
+    $('.error-status').val('');
+    $('.bp-input').val('');
+    $('.station-name').val('');
+    $('.sync-status').val('');
+    $('.upload-status').val('');
+    $('.methods').val('');
+    $('.type').val('');
+});
+
 
     // 用於更新頁面內容的函數
     function updatePageWithResults(results) {
