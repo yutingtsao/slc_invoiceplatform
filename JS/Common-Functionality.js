@@ -393,11 +393,11 @@ $('.table_edit_bt').click(function(){
     var $row = $(this).closest('tr');
 
     // 获取行数据
-    var unit = $row.find('td').eq(2).text();
+    var unit = $row.find('td').eq(4).text();
     var site = $row.find('td').eq(3).text();
-    var taxId = $row.find('td').eq(4).text();
-    var category = $row.find('td').eq(6).text();
-    var purpose = $row.find('td').eq(7).text();
+    var taxId = $row.find('td').eq(5).text();
+    var category = $row.find('td').eq(7).text();
+    var purpose = $row.find('td').eq(8).text();
 
     // 设置编辑对话框中的值
     $('#edit-unit').val(unit);
