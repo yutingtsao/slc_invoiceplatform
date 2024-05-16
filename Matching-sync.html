@@ -182,7 +182,7 @@
               <div class="confirm_setting">
                 <div class="confirm_message">
                     確定要同步這個年份：
-                    <span id="siteNameToDelete"></span> ？
+                    <span id="siteNameToSync"></span> ？
                 </div>
               </div>
               <div class="button_group">
@@ -212,7 +212,7 @@
               </div>
               <div class="button_group">
                 <button class="cancel_bt" data-bs-dismiss="modal" id="negative_bt-sm"><i class="fa-fw fa-solid fa-xmark fa-lg"></i>取消</button>
-                <button class="all_sync_delete_bt" id="positive_bt-sm"><i class="fa-fw fa-solid fa-check fa-lg"></i>確認</button>
+                <button class="all_sync_bt" id="positive_bt-sm"><i class="fa-fw fa-solid fa-check fa-lg"></i>確認</button>
             </div>
           </div>
         </div>
@@ -244,6 +244,99 @@
     </div>
   </div>
 
+<div class="modal fade" id="matching-sync-success_popup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content shadow">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><title-large>配號結果</title-large></h5>
+              
+            </div>
+            <div class="modal-body">
+              <div class="confirm_matching_dialog">
+                  <div class="confirm_setting">
+                    <div class="confirm_message">
+                        <i class="fa-solid fa-circle-check fa-xl" style="color: #06b217;"></i>
+                        <span>新增作業已進行</span>
+                    </div>
+                  </div>
+                    <button class="confirm_matching_bt" id="positive_bt-sm"data-bs-dismiss="modal" aria-label="Close"><i class="fa-fw fa-solid fa-check fa-lg"></i>確認</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="matching-sync-alert_popup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content shadow">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><title-large>配號結果</title-large></h5>
+              
+            </div>
+            <div class="modal-body">
+              <div class="confirm_matching_dialog">
+                  <div class="confirm_setting">
+                    <div class="confirm_message">
+                        <i class="fa-solid fa-circle-exclamation fa-xl" style="color: #EE9250;"></i>
+                        <span>該年度未完成字軌配號</span>
+                    </div>
+                  </div>
+                    <button class="confirm_matching_bt" id="positive_bt-sm"data-bs-dismiss="modal" aria-label="Close"><i class="fa-fw fa-solid fa-check fa-lg"></i>確認</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="matching-sync-fail_popup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content shadow">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><title-large>配號結果</title-large></h5>
+              
+            </div>
+            <div class="modal-body">
+              <div class="confirm_matching_dialog">
+                  <div class="confirm_setting">
+                    <div class="confirm_message">
+                        <i class="fa-solid fa-circle-xmark fa-xl"style="color: #E6514D;" ></i>
+                        <span>同步作業失敗</span>
+                    </div>
+                  </div>
+                    <button class="confirm_matching_bt" id="positive_bt-sm"data-bs-dismiss="modal" aria-label="Close"><i class="fa-fw fa-solid fa-check fa-lg"></i>確認</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="matching-sync-done_popup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content shadow">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><title-large>配號結果</title-large></h5>
+              
+            </div>
+            <div class="modal-body">
+              <div class="confirm_matching_dialog">
+                  <div class="confirm_setting">
+                    <div class="confirm_message">
+                        <i class="fa-solid fa-circle-info fa-xl"style="color: #4E8BDB;" ></i>
+                        <span>該年度已完成字軌配號</span>
+                    </div>
+                  </div>
+                    <button class="confirm_matching_bt" id="positive_bt-sm"data-bs-dismiss="modal" aria-label="Close"><i class="fa-fw fa-solid fa-check fa-lg"></i>確認</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 

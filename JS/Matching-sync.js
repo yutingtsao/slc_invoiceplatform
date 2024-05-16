@@ -62,7 +62,7 @@ $(document).ready(function(){
      $('.table_sync_bt').click(function() {
         var $row = $(this).closest('tr');
         var siteName = $row.find('td').eq(2).text(); // 假設站點名稱位於第四個td
-        $('#siteNameToDelete').text(siteName); // 將站點名稱設定到 Modal 中
+        $('#siteNameToSync').text(siteName); // 將站點名稱設定到 Modal 中
         $('#sync-row_popup').modal('show'); // 顯示 Modal
 
         $('.confirm_sync_bt').off('click').on('click', function() {
