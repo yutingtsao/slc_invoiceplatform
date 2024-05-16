@@ -51,6 +51,10 @@
 }
 
 
+.iq-card-body th:nth-child(1){
+    text-align: center;
+}
+
 
 .iq-card-body td:nth-child(11){
    width: 210px;

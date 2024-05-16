@@ -51,25 +51,22 @@
 }
 
 
-
-.iq-card-body td:nth-child(11){
-   width: 210px;
-  
-}
-
-
-.iq-card-body th:nth-child(11){
-    text-align: center;
-}
-
-.iq-card-body th:nth-child(10){
+.iq-card-body th:nth-child(1){
     text-align: center;
 }
 
 
-.iq-card-body td:nth-child(10){
+.iq-card-body th:nth-child(1){
+    width: 91.25px;
+}
+
+.iq-card-body th:nth-child(8){
     text-align: center;
-    width: 120px;
+}
+
+.iq-card-body td:nth-child(8){
+    text-align: center;
+    width: 160px;
 }
 
 
