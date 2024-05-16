@@ -45,7 +45,7 @@ $(document).ready(function(){
                 saveNewOrder(); // 儲存新的排序狀態
             });
         } else {
-            $('#all_delete-row-confirmalert').modal('show'); 
+            $('#all_delete-row-confirm_alert').modal('show'); 
         }
     });
 
@@ -274,8 +274,8 @@ $(document).ready(function(){
     //                             <button class="btn btn-outline-secondary btn-sm move-down">下移</button>
     //                         </td>
     //                         <td>
-    //                             <button class="table_delete_bt"><i class="fa-fw fa-solid fa-trash fa-xl " style="color: #745e48;"></i></button>
-    //                             <button class="table_edit_bt"><i class="fa-fw fa-solid fa-pen-line fa-xl" style="color: #745e48;"></i></button>
+    //                             <button class="table_delete_bt"><i class="fa-fw fa-solid fa-trash fa-lg " style="color: #745e48;"></i></button>
+    //                             <button class="table_edit_bt"><i class="fa-fw fa-solid fa-pen-line fa-lg" style="color: #745e48;"></i></button>
     //                         </td>
     //                     </tr>`
     //                 );
