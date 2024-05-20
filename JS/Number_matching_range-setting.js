@@ -27,6 +27,12 @@ $(document).ready(function(){
     // });
     // // // 初始化序号
    
+    $('#datatable thead th input[type="checkbox"]').click(function() {
+        var isChecked = $(this).is(':checked');
+        $('#datatable tbody tr input[type="checkbox"]').prop('checked', isChecked);
+    });
+
+    
     $('.table_all_delete_bt').click(function() {
         var selectedRows = $('.iq-card-body tr').filter(function() {
             return $(this).find('input[type="checkbox"]').is(':checked');
