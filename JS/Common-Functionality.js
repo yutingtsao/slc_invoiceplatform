@@ -150,7 +150,7 @@ $(document).ready(function(){
 
     function initSaveYearMonthButtons() {
         $('.matching_function-search_bt').click(function() {
-            saveYearMonthToLocalStorage('.matching-function_year-select', '.matching-function_type-result', '../Matching-function.html');
+            saveYearMonthToLocalStorage('.matching-function_year-select', '.matching-function_type-select', '../Matching-function.html');
         });
 
         $('.matching_search-search_bt').click(function() {
@@ -189,7 +189,7 @@ $(document).ready(function(){
 
         } else if (window.location.pathname.endsWith('Matching-search.html')) {
             loadYearMonthFromLocalStorage('.matching-search_year-inside-result', '.matching-search_month-inside-result');
-            syncSelectors('.matching-search_year-inside-result','.matching-search_month-inside-result','.matching-search_year-select', '.matching-search_month-select','.matching-search_year-result', '.matching-search_month-result');
+            syncSelectors('.matching-search_year-inside-result','.matching-search_month-inside-result','.matching-search_month-select','.matching-search_year-result', '.matching-search_month-result');
             
         }else if (window.location.pathname.endsWith('Invoice-fueling_invoice.html')) {
             loadYearMonthFromLocalStorage('.invoice-fueling_year-result', '.invoice-fueling_month-result');
