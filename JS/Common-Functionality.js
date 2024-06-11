@@ -69,8 +69,8 @@ $(document).ready(function(){
         initializeYearMonthSelectors('.matching-search_year-select', '.matching-search_month-select');
         initializeYearMonthSelectors('.matching-search_year-inside-result', '.matching-search_month-inside-result');
         initializeYearMonthSelectors('.matching-search_year-result', '.matching-search_month-result');
-        initializeYearMonthSelectors('.matching-function_year-select', '.matching-function_month-select');
-        initializeYearMonthSelectors('.matching-function_year-result', '.matching-function_month-result');
+        initializeYearMonthSelectors('.matching-function_year-select');
+        initializeYearMonthSelectors('.matching-function_year-result');
     
         // 初始化保存和加载按钮
         initSaveYearMonthButtons();
@@ -100,7 +100,7 @@ $(document).ready(function(){
     //     initializeYearMonthSelectors('.matching-search_year-select', '.matching-search_month-select');
     //     initializeYearMonthSelectors('.matching-search_year-inside-result', '.matching-search_month-inside-result');
     //     initializeYearMonthSelectors('.matching-search_year-result', '.matching-search_month-result');
-    //     initializeYearMonthSelectors('.matching-function_year-select', '.matching-function_month-select');
+    //     initializeYearMonthSelectors('.matching-function_year-select', '.matching-function_type-result');
     //     initializeYearMonthSelectors('.matching-function_year-result', '.matching-function_month-result');
     
     //     // 初始化所有功能
@@ -150,7 +150,7 @@ $(document).ready(function(){
 
     function initSaveYearMonthButtons() {
         $('.matching_function-search_bt').click(function() {
-            saveYearMonthToLocalStorage('.matching-function_year-select', '.matching-function_month-select', '../Matching-function.html');
+            saveYearMonthToLocalStorage('.matching-function_year-select', '.matching-function_type-result', '../Matching-function.html');
         });
 
         $('.matching_search-search_bt').click(function() {
@@ -182,7 +182,7 @@ $(document).ready(function(){
 
     function initLoadYearMonth() {
         if (window.location.pathname.endsWith('Matching-function.html')) {
-            loadYearMonthFromLocalStorage('.matching-function_year-result', '.matching-function_month-result');
+            loadYearMonthFromLocalStorage('.matching-function_year-result', '.matching-function_type-result');
         } else if (window.location.pathname.endsWith('matching-search.html')) {
             loadYearMonthFromLocalStorage('.matching-search_year-result', '.matching-search_month-result');
             syncSelectors('.matching-search_year-inside-result', '.matching-search_month-inside-result','.matching-search_year-result', '.matching-search_month-result');
@@ -214,10 +214,10 @@ $(document).ready(function(){
         // 使用事件委托绑定点击事件
 
         $(document).on('click', '.add-range-row_bt', function() {
-            loadYearMonthFromLocalStorage('.matching-search_year-result', '.matching-search_month-result','.matching-function_year-result','.matching-function_month-result');
+            loadYearMonthFromLocalStorage('.matching-search_year-result', '.matching-search_month-result','.matching-function_year-result','.matching-function_type-result');
         });
         $(document).on('click', '.add_range_bt', function() {
-            loadYearMonthFromLocalStorage('.matching-search_year-result', '.matching-search_month-result','.matching-function_year-result','.matching-function_month-result');
+            loadYearMonthFromLocalStorage('.matching-search_year-result', '.matching-search_month-result','.matching-function_year-result','.matching-function_type-result');
         });
     }
 
@@ -459,7 +459,7 @@ $('.eraser_bt').click(function() {
     $('.matching-search_year-inside-result').val('');
     $('.matching-search_month-inside-result').val('');
     $('.matching-function_year-result').val('');
-    $('.matching-function_month-result').val('');
+    $('.matching-function_type-result').val('');
 
     // 清空其他选择器的值
     $('.change-status').val('');

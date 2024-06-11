@@ -313,6 +313,24 @@ body{
     margin-bottom: 40px;
 }
 
+.matching_search_setting{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    background-color: #EFE2CB;
+    width: 604px;
+    height: 156px;
+    border-radius: 16px;
+    padding: 28px;
+    gap: 28px;
+    margin-bottom: 40px;
+}
+
+.modal-lg{
+    width: 700px !important;
+}
+
 .invoice_filter{
     display: flex;
     width: 1088px;
