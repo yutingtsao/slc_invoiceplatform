@@ -386,6 +386,7 @@ body{
   
 
 
+
 .table{
   text-align: left;
   
@@ -395,6 +396,10 @@ body{
 .iq-card-body tr{
     border-color: #dee2e6 !important;
     
+}
+
+.iq-card-body th{
+    --bs-table-color: #5E3C30 !important;
 }
 
 .table-dark tr th{

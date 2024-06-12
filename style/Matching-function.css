@@ -84,6 +84,8 @@
     text-align: center;
 }
 
+
+
 .iq-card-body td:nth-child(9){
     text-align: center;
     width: 120px;
@@ -120,6 +122,3 @@ td.checkbox-cell input {
     height: 44px;
     margin-bottom: 28px;
 }
-
-
-
